@@ -27,6 +27,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate{
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil
         ) -> Bool {
         
+        #if DEBUG
+        UIView.Start()
+        #endif
         self.dependency = self.dependency ?? CompositionRoot.resolve()
         self.dependency.configureSDKs()
         self.dependency.configureAppearance()

@@ -8,6 +8,7 @@
 
 import UIKit
 
+import SnapKit
 
 struct AppDependency {
     
@@ -23,12 +24,23 @@ struct AppDependency {
 
 final class CompositionRoot {
     static func resolve() -> AppDependency {
+        
+        
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = .white
-        
-        window.rootViewController = BaseViewController()
         window.makeKeyAndVisible()
+
+        var presentSparclerScreen: (() -> Void)!
         
+        presentSparclerScreen = {
+            let reactor = SparclerViewReactor()
+            let navigtaionController = UINavigationController(rootViewController: SparclerViewController(reactor: reactor))
+            window.rootViewController = navigtaionController
+        }
+        
+        let reactor = SplashViewReactor()
+        let splashViewController = SplashViewController(reactor: reactor, presentSparclerScreen: presentSparclerScreen)
+        window.rootViewController = splashViewController
         
         
         return AppDependency(window: window,

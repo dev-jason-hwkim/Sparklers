@@ -12,6 +12,19 @@
 		2C61344C210E9586008AE829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C61344B210E9586008AE829 /* Assets.xcassets */; };
 		2C61344F210E9586008AE829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C61344D210E9586008AE829 /* LaunchScreen.storyboard */; };
 		2C613465210E9587008AE829 /* SparclersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C613464210E9587008AE829 /* SparclersUITests.swift */; };
+		2C6A214F213BC7F0006C5450 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A214E213BC7F0006C5450 /* Color.swift */; };
+		2C6A2151213BC86D006C5450 /* ColorPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2150213BC86D006C5450 /* ColorPackage.swift */; };
+		2C6A2153213BC8C2006C5450 /* SparclerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2152213BC8C2006C5450 /* SparclerViewController.swift */; };
+		2C6A2155213BCD27006C5450 /* SparclerViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2154213BCD27006C5450 /* SparclerViewReactor.swift */; };
+		2C6A2157213BD351006C5450 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2156213BD351006C5450 /* SplashViewController.swift */; };
+		2C6A2159213BD36F006C5450 /* SplashViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2158213BD36F006C5450 /* SplashViewReactor.swift */; };
+		2C6A215C213BD65D006C5450 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A215B213BD65D006C5450 /* PlayerView.swift */; };
+		2C6A215F213BD74C006C5450 /* UIView-Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A215E213BD74C006C5450 /* UIView-Debug.swift */; };
+		2C6A2164213BD8C4006C5450 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C6A2163213BD8C4006C5450 /* Info.plist */; };
+		2C6A2167213BDB33006C5450 /* sparkler.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2C6A2166213BDB33006C5450 /* sparkler.mp4 */; };
+		2C6A2169213BE425006C5450 /* SquareLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A2168213BE425006C5450 /* SquareLineView.swift */; };
+		2C6A216C213BE9C3006C5450 /* UIColor-Rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A216B213BE9C3006C5450 /* UIColor-Rgb.swift */; };
+		2C6A216E213BEC61006C5450 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A216D213BEC61006C5450 /* Constants.swift */; };
 		2C6DB5AE210E9B7200BC7057 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5AD210E9B7200BC7057 /* main.swift */; };
 		2C6DB5B0210E9C7400BC7057 /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5AF210E9C7400BC7057 /* CompositionRoot.swift */; };
 		2C6DB5B4210E9F8900BC7057 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5B3210E9F8900BC7057 /* BaseViewController.swift */; };
@@ -44,12 +57,24 @@
 		2C613444210E9586008AE829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C61344B210E9586008AE829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C61344E210E9586008AE829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2C613450210E9586008AE829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C613455210E9586008AE829 /* SparclersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparclersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C61345B210E9587008AE829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C613460210E9587008AE829 /* SparclersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparclersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C613464210E9587008AE829 /* SparclersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparclersUITests.swift; sourceTree = "<group>"; };
 		2C613466210E9587008AE829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C6A214E213BC7F0006C5450 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		2C6A2150213BC86D006C5450 /* ColorPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPackage.swift; sourceTree = "<group>"; };
+		2C6A2152213BC8C2006C5450 /* SparclerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparclerViewController.swift; sourceTree = "<group>"; };
+		2C6A2154213BCD27006C5450 /* SparclerViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparclerViewReactor.swift; sourceTree = "<group>"; };
+		2C6A2156213BD351006C5450 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		2C6A2158213BD36F006C5450 /* SplashViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewReactor.swift; sourceTree = "<group>"; };
+		2C6A215B213BD65D006C5450 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		2C6A215E213BD74C006C5450 /* UIView-Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-Debug.swift"; sourceTree = "<group>"; };
+		2C6A2163213BD8C4006C5450 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C6A2166213BDB33006C5450 /* sparkler.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sparkler.mp4; sourceTree = "<group>"; };
+		2C6A2168213BE425006C5450 /* SquareLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareLineView.swift; sourceTree = "<group>"; };
+		2C6A216B213BE9C3006C5450 /* UIColor-Rgb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Rgb.swift"; sourceTree = "<group>"; };
+		2C6A216D213BEC61006C5450 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C6DB5AD210E9B7200BC7057 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2C6DB5AF210E9C7400BC7057 /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 		2C6DB5B3210E9F8900BC7057 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +143,7 @@
 			children = (
 				2CDE34AC210E9644001E7064 /* Sources */,
 				2CDE34AD210E965A001E7064 /* Resources */,
-				2CDE34AE210E9668001E7064 /* Supporting Files */,
+				2C6A2162213BD8C4006C5450 /* Supporting Files */,
 			);
 			path = Sparclers;
 			sourceTree = "<group>";
@@ -140,6 +165,50 @@
 			path = SparclersUITests;
 			sourceTree = "<group>";
 		};
+		2C6A214D213BC7DA006C5450 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C6A214E213BC7F0006C5450 /* Color.swift */,
+				2C6A2150213BC86D006C5450 /* ColorPackage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C6A215A213BD64A006C5450 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C6A215B213BD65D006C5450 /* PlayerView.swift */,
+				2C6A2168213BE425006C5450 /* SquareLineView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C6A215D213BD736006C5450 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2C6A215E213BD74C006C5450 /* UIView-Debug.swift */,
+				2C6A216B213BE9C3006C5450 /* UIColor-Rgb.swift */,
+				2C6A216D213BEC61006C5450 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2C6A2162213BD8C4006C5450 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C6A2163213BD8C4006C5450 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C6A2165213BDB1A006C5450 /* raw */ = {
+			isa = PBXGroup;
+			children = (
+				2C6A2166213BDB33006C5450 /* sparkler.mp4 */,
+			);
+			path = raw;
+			sourceTree = "<group>";
+		};
 		2C6DB5B5210EA03000BC7057 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +224,10 @@
 				2C613444210E9586008AE829 /* AppDelegate.swift */,
 				2C6DB5AF210E9C7400BC7057 /* CompositionRoot.swift */,
 				2CDE34AF210E967C001E7064 /* ViewControllers */,
+				2C6A215A213BD64A006C5450 /* Views */,
+				2C6A214D213BC7DA006C5450 /* Models */,
 				2C6DB5B5210EA03000BC7057 /* Logging */,
+				2C6A215D213BD736006C5450 /* Utils */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -163,24 +235,21 @@
 		2CDE34AD210E965A001E7064 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C6A2165213BDB1A006C5450 /* raw */,
 				2C61344B210E9586008AE829 /* Assets.xcassets */,
 				2C61344D210E9586008AE829 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		2CDE34AE210E9668001E7064 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2C613450210E9586008AE829 /* Info.plist */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		2CDE34AF210E967C001E7064 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				2C6DB5B3210E9F8900BC7057 /* BaseViewController.swift */,
+				2C6A2156213BD351006C5450 /* SplashViewController.swift */,
+				2C6A2158213BD36F006C5450 /* SplashViewReactor.swift */,
+				2C6A2152213BC8C2006C5450 /* SparclerViewController.swift */,
+				2C6A2154213BCD27006C5450 /* SparclerViewReactor.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -318,6 +387,8 @@
 			files = (
 				2C61344F210E9586008AE829 /* LaunchScreen.storyboard in Resources */,
 				2C61344C210E9586008AE829 /* Assets.xcassets in Resources */,
+				2C6A2164213BD8C4006C5450 /* Info.plist in Resources */,
+				2C6A2167213BDB33006C5450 /* sparkler.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,18 +417,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Sparclers/Pods-Sparclers-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
+				"${BUILT_PRODUCTS_DIR}/ValueAnimator/ValueAnimator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ValueAnimator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -425,11 +502,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C6A2155213BCD27006C5450 /* SparclerViewReactor.swift in Sources */,
 				2C6DB5B7210EA04600BC7057 /* Logger.swift in Sources */,
+				2C6A216C213BE9C3006C5450 /* UIColor-Rgb.swift in Sources */,
+				2C6A2159213BD36F006C5450 /* SplashViewReactor.swift in Sources */,
+				2C6A215C213BD65D006C5450 /* PlayerView.swift in Sources */,
 				2C6DB5B0210E9C7400BC7057 /* CompositionRoot.swift in Sources */,
+				2C6A2153213BC8C2006C5450 /* SparclerViewController.swift in Sources */,
+				2C6A216E213BEC61006C5450 /* Constants.swift in Sources */,
 				2C6DB5B4210E9F8900BC7057 /* BaseViewController.swift in Sources */,
 				2C613445210E9586008AE829 /* AppDelegate.swift in Sources */,
 				2C6DB5AE210E9B7200BC7057 /* main.swift in Sources */,
+				2C6A214F213BC7F0006C5450 /* Color.swift in Sources */,
+				2C6A215F213BD74C006C5450 /* UIView-Debug.swift in Sources */,
+				2C6A2169213BE425006C5450 /* SquareLineView.swift in Sources */,
+				2C6A2151213BC86D006C5450 /* ColorPackage.swift in Sources */,
+				2C6A2157213BD351006C5450 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,7 +693,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyunwoo.Sparclers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -625,7 +713,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyunwoo.Sparclers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
