@@ -40,13 +40,22 @@ class BaseViewController: UIViewController {
         logger.verbose("DEINIT: \(self.className)")
     }
     
-    
+    var safeAreaInsets: UIEdgeInsets {
+        get {
+            if #available(iOS 11.0, *) {
+                return self.view.safeAreaInsets
+            } else {
+                return .zero
+            }
+        }
+    }
     var disposeBag = DisposeBag()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         self.addViews()
         self.view.setNeedsUpdateConstraints()
 
