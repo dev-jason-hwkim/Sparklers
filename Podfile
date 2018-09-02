@@ -11,7 +11,7 @@ target 'Sparclers' do
     # Rx
     pod 'RxSwift'
     pod 'RxCocoa'
-    
+    pod 'RxViewController'
     # UI
     pod 'SnapKit'
     
@@ -21,7 +21,12 @@ target 'Sparclers' do
     
     # Misc.
     pod 'Then'
-
+    
+    # Architecture
+    pod 'ReactorKit'
+    
+    pod 'ValueAnimator'
+    
     # Pods for Sparclers
     
     target 'SparclersTests' do
