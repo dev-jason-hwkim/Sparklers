@@ -60,8 +60,6 @@ final class SplashViewReactor: Reactor {
             return Observable.just(Mutation.setAddNotificaiton(false))
         }
         
-        
-        return .empty()
     }
     
     func reduce(state: State, mutation: Mutation) -> State {

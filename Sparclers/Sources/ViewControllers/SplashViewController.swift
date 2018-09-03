@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import RxViewController
+import RxGesture
 import ReactorKit
 
 
@@ -143,7 +144,7 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
         self.touchScreen.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.bottom.equalToSuperview().offset(self.safeAreaInsets.bottom)
+            make.bottom.equalToSuperview().offset(-self.safeAreaInsets.bottom)
             make.height.equalTo(Metric.touchScreenHeight)
         }
         
@@ -170,6 +171,16 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
             .map { _ in Reactor.Action.viewDidDisappear }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
+        
+        self.view.rx.tapGesture()
+            .when(.ended)
+            .subscribe(onNext: {[weak self] (_) in
+                guard let `self` = self else { return }
+                self.presentSparclerScreen()
+            })
+            .disposed(by: self.disposeBag)
+        
+        
     }
     
     private func startCoverViewAnimation() {
