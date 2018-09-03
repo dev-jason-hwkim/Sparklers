@@ -19,8 +19,8 @@ final class SparclerColorCellReactor: Reactor {
     
     let initialState: State
     
-    init (filter:Filter) {
-        self.initialState = State(filter: filter)
+    init (color:Color) {
+        self.initialState = State(color: color)
         _ = self.state
     }
     

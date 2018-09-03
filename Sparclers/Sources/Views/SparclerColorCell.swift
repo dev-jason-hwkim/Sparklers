@@ -9,8 +9,11 @@
 
 import RxSwift
 import RxCocoa
+import RxOptional
 
 import ReactorKit
+
+import ManualLayout
 
 final class SparclerColorCell: BaseCollectionViewCell, View {
     private struct Metric {
@@ -21,17 +24,23 @@ final class SparclerColorCell: BaseCollectionViewCell, View {
     
     private struct Color  {
         static let colorView = UIColor.color(red: 65, green: 66, blue: 65)
-        
     }
+    
+    private struct Font {
+        static let name = UIFont.boldSystemFont(ofSize: 30)
+    }
+    
     private let colorView = UIView().then {
         $0.backgroundColor = Color.colorView
         $0.layer.cornerRadius = Metric.filterViewWidth/2
-        $0.layer.borderWidth = 3.0
+
         
     }
     
     private let name = UILabel().then {
         $0.backgroundColor = .clear
+        $0.textAlignment = .center
+        $0.font = Font.name
         
     }
     
@@ -46,16 +55,15 @@ final class SparclerColorCell: BaseCollectionViewCell, View {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.colorView.width = Metric.filterViewWidth
-        self.colorView.height = Metric.filterViewHeight
-        
-        self.name.centerX = self.filterView.width / 2
-        self.name.centerY = self.filterView.height / 2
+        self.colorView.frame = self.contentView.bounds
+        self.name.frame = self.colorView.bounds
+
     }
     
     func bind(reactor: SparclerColorCellReactor) {
         reactor.state
             .map { $0.color.name }
+            .debug()
             .bind(to: self.name.rx.text)
             .disposed(by: self.disposeBag)
         
@@ -64,7 +72,7 @@ final class SparclerColorCell: BaseCollectionViewCell, View {
             .map { $0.color.color }
             .subscribe(onNext: { [weak self] (color) in
                 guard let `self` = self else { return }
-                self.colorView.layer.borderColor = color.cgColor
+                self.name.textColor = color
             })
             .disposed(by: self.disposeBag)
         

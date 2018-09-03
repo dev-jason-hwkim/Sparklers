@@ -8,6 +8,22 @@
 
 import UIKit
 
+
+struct GoogleAdMobInfo {
+    static let appId = "ca-app-pub-4718977625494132~6911275288"
+
+    enum AdUnitId: String {
+        #if DEBUG
+        case selectColorPage = "ca-app-pub-3940256099942544/2934735716"
+        #else
+        case selectColorPage = "ca-app-pub-4718977625494132/6997113180"
+        #endif
+    }
+}
+
+
+
+
 public let SCREEN_SIZE = CGSize(width: UIScreen.main.nativeBounds.size.width / UIScreen.main.nativeScale,
                                 height: UIScreen.main.nativeBounds.size.height / UIScreen.main.nativeScale)
 

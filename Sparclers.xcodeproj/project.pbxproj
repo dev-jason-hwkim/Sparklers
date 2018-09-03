@@ -34,10 +34,13 @@
 		2CE4779C213CBA3C005FD69C /* SparclerColorCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4779B213CBA3C005FD69C /* SparclerColorCellReactor.swift */; };
 		2CE477A6213CBB81005FD69C /* StubAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A0213CBB81005FD69C /* StubAppDelegate.swift */; };
 		2CE477A7213CBB81005FD69C /* StubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A1213CBB81005FD69C /* StubError.swift */; };
-		2CE477A8213CBB81005FD69C /* TestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A2213CBB81005FD69C /* TestConfiguration.swift */; };
 		2CE477A9213CBB81005FD69C /* TestMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A3213CBB81005FD69C /* TestMain.swift */; };
 		2CE477AA213CBB81005FD69C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE477A4213CBB81005FD69C /* Info.plist */; };
+		2CE477AD213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477AC213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift */; };
+		2CE477AE213CBDAA005FD69C /* TestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A2213CBB81005FD69C /* TestConfiguration.swift */; };
+		2CE477B1213D3601005FD69C /* UICollectionView-Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477B0213D3601005FD69C /* UICollectionView-Rx.swift */; };
 		2D13F495B1AC7B8632EB01D1 /* Pods_SparclersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4CA260C1A04662E735B20 /* Pods_SparclersUITests.framework */; };
+		6C0AB1BD4B29ACE417102437 /* Pods_Sparclers_SparclersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1B41EBE2EB1C2168452233 /* Pods_Sparclers_SparclersTests.framework */; };
 		9F414682399B8EE2664CD701 /* Pods_Sparclers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF57527E32E918B6275D6ACF /* Pods_Sparclers.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,9 +96,14 @@
 		2CE477A2213CBB81005FD69C /* TestConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestConfiguration.swift; sourceTree = "<group>"; };
 		2CE477A3213CBB81005FD69C /* TestMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMain.swift; sourceTree = "<group>"; };
 		2CE477A4213CBB81005FD69C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CE477AC213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparclerColorCollectionViewSection.swift; sourceTree = "<group>"; };
+		2CE477B0213D3601005FD69C /* UICollectionView-Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView-Rx.swift"; sourceTree = "<group>"; };
 		391AD9EA7D3368DB330B1CF8 /* Pods_SparclersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SparclersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B06A8A25677B4E0916F354 /* Pods-Sparclers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparclers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sparclers/Pods-Sparclers.release.xcconfig"; sourceTree = "<group>"; };
+		5A0235885A7DF532C53A3544 /* Pods-Sparclers-SparclersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparclers-SparclersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sparclers-SparclersTests/Pods-Sparclers-SparclersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		636E8A2313645FC1B5EED3A1 /* Pods-SparclersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparclersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SparclersTests/Pods-SparclersTests.release.xcconfig"; sourceTree = "<group>"; };
+		7F1B41EBE2EB1C2168452233 /* Pods_Sparclers_SparclersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sparclers_SparclersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		954ECB93D508E929BCF6B3A4 /* Pods-Sparclers-SparclersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparclers-SparclersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sparclers-SparclersTests/Pods-Sparclers-SparclersTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF57527E32E918B6275D6ACF /* Pods_Sparclers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sparclers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59F8235BEFDD5BC072AD23A /* Pods-SparclersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparclersUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SparclersUITests/Pods-SparclersUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E528A20A21FA4D6308A3103E /* Pods-SparclersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparclersUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SparclersUITests/Pods-SparclersUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B9F9AA8FA37B90EDE4DFC4F /* Pods_SparclersTests.framework in Frameworks */,
+				6C0AB1BD4B29ACE417102437 /* Pods_Sparclers_SparclersTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +227,8 @@
 				2CDE34AF210E967C001E7064 /* ViewControllers */,
 				2C6A215A213BD64A006C5450 /* Views */,
 				2C6A214D213BC7DA006C5450 /* Models */,
+				2CE477AB213CBBF2005FD69C /* Sections */,
+				2CE477AF213D35E1005FD69C /* Rx */,
 				2C6DB5B5210EA03000BC7057 /* Logging */,
 				2C6A215D213BD736006C5450 /* Utils */,
 			);
@@ -290,6 +301,22 @@
 			path = SparclersUITests;
 			sourceTree = "<group>";
 		};
+		2CE477AB213CBBF2005FD69C /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				2CE477AC213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		2CE477AF213D35E1005FD69C /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				2CE477B0213D3601005FD69C /* UICollectionView-Rx.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
 		5A516FEDB4BC655C8A51FC9B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +326,8 @@
 				636E8A2313645FC1B5EED3A1 /* Pods-SparclersTests.release.xcconfig */,
 				E528A20A21FA4D6308A3103E /* Pods-SparclersUITests.debug.xcconfig */,
 				D59F8235BEFDD5BC072AD23A /* Pods-SparclersUITests.release.xcconfig */,
+				5A0235885A7DF532C53A3544 /* Pods-Sparclers-SparclersTests.debug.xcconfig */,
+				954ECB93D508E929BCF6B3A4 /* Pods-Sparclers-SparclersTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -309,6 +338,7 @@
 				AF57527E32E918B6275D6ACF /* Pods_Sparclers.framework */,
 				391AD9EA7D3368DB330B1CF8 /* Pods_SparclersTests.framework */,
 				EDF4CA260C1A04662E735B20 /* Pods_SparclersUITests.framework */,
+				7F1B41EBE2EB1C2168452233 /* Pods_Sparclers_SparclersTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -343,6 +373,7 @@
 				2C613451210E9586008AE829 /* Sources */,
 				2C613452210E9586008AE829 /* Frameworks */,
 				2C613453210E9586008AE829 /* Resources */,
+				293F1D0773FB4D7A60BB5815 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -455,30 +486,102 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Sparclers/Pods-Sparclers-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ManualLayout/ManualLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ReusableKit/ReusableKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 				"${BUILT_PRODUCTS_DIR}/ValueAnimator/ValueAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ManualLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReusableKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ValueAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sparclers/Pods-Sparclers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		293F1D0773FB4D7A60BB5815 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sparclers-SparclersTests/Pods-Sparclers-SparclersTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ManualLayout/ManualLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ReusableKit/ReusableKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
+				"${BUILT_PRODUCTS_DIR}/ValueAnimator/ValueAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/Stubber/Stubber.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ManualLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReusableKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ValueAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stubber.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sparclers-SparclersTests/Pods-Sparclers-SparclersTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		77801FD684561F57A571A2E8 /* [CP] Check Pods Manifest.lock */ = {
@@ -528,7 +631,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SparclersTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Sparclers-SparclersTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -544,11 +647,13 @@
 			files = (
 				2CE477A7213CBB81005FD69C /* StubError.swift in Sources */,
 				2CE47794213CB785005FD69C /* SparclerViewReactor.swift in Sources */,
+				2CE477AD213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift in Sources */,
 				2C6DB5B7210EA04600BC7057 /* Logger.swift in Sources */,
 				2CE47796213CB790005FD69C /* SparclerViewController.swift in Sources */,
 				2C6A216C213BE9C3006C5450 /* UIColor-Rgb.swift in Sources */,
 				2C6A2159213BD36F006C5450 /* SplashViewReactor.swift in Sources */,
 				2C6A215C213BD65D006C5450 /* PlayerView.swift in Sources */,
+				2CE477B1213D3601005FD69C /* UICollectionView-Rx.swift in Sources */,
 				2C6DB5B0210E9C7400BC7057 /* CompositionRoot.swift in Sources */,
 				2CE477A9213CBB81005FD69C /* TestMain.swift in Sources */,
 				2C6A216E213BEC61006C5450 /* Constants.swift in Sources */,
@@ -561,7 +666,6 @@
 				2CE477A6213CBB81005FD69C /* StubAppDelegate.swift in Sources */,
 				2C6A215F213BD74C006C5450 /* UIView-Debug.swift in Sources */,
 				2CE4779C213CBA3C005FD69C /* SparclerColorCellReactor.swift in Sources */,
-				2CE477A8213CBB81005FD69C /* TestConfiguration.swift in Sources */,
 				2C6A2169213BE425006C5450 /* SquareLineView.swift in Sources */,
 				2C6A2151213BC86D006C5450 /* ColorPackage.swift in Sources */,
 				2C6A2157213BD351006C5450 /* SplashViewController.swift in Sources */,
@@ -572,6 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE477AE213CBDAA005FD69C /* TestConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,7 +841,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyunwoo.Sparclers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.travelpictools.sparclers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -756,7 +861,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyunwoo.Sparclers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.travelpictools.sparclers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -765,7 +870,7 @@
 		};
 		2C61346D210E9587008AE829 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2630A163F1E6B185305AD9B6 /* Pods-SparclersTests.debug.xcconfig */;
+			baseConfigurationReference = 5A0235885A7DF532C53A3544 /* Pods-Sparclers-SparclersTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -787,7 +892,7 @@
 		};
 		2C61346E210E9587008AE829 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 636E8A2313645FC1B5EED3A1 /* Pods-SparclersTests.release.xcconfig */;
+			baseConfigurationReference = 954ECB93D508E929BCF6B3A4 /* Pods-Sparclers-SparclersTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

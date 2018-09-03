@@ -11,5 +11,12 @@ import UIKit
 struct Color {
     var color = UIColor.white
     var name = ""
-    var resource: UIImage?
+    var resource: UIImage? = #imageLiteral(resourceName: "preview_sample")
+    
+    init(color:UIColor, name:String, resource:UIImage? = nil) {
+        self.color = color
+        self.name = name
+        self.resource = resource        
+    }
+    
 }

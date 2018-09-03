@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 import SnapKit
 
 struct AppDependency {
@@ -33,7 +33,7 @@ final class CompositionRoot {
         var presentSparclerScreen: (() -> Void)!
         
         presentSparclerScreen = {
-            let reactor = SparclerViewReactor()
+            let reactor = SparclerViewReactor(colorCellReactorFactory: SparclerColorCellReactor.init)
             let navigtaionController = UINavigationController(rootViewController: SparclerViewController(reactor: reactor))
             window.rootViewController = navigtaionController
         }
@@ -49,6 +49,10 @@ final class CompositionRoot {
     }
     
     static func configureSDKs() {
+        FirebaseApp.configure()
+        GADMobileAds.configure(withApplicationID: GoogleAdMobInfo.appId)
+        
+
 
     }
     
