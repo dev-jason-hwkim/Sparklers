@@ -43,16 +43,18 @@ final class SquareLineView: UIView {
     
     func animationStart(timeInterval: TimeInterval)  {
         self.animationStop()
-        animator = ValueAnimator.animate("some",
-                              from: 0,
-                              to: 1,
-                              duration: timeInterval,
-                              onChanged: { [weak self] p, v in
-                                guard let `self` = self else { return }
-                                self.changeSize = self.bounds.width * CGFloat(v.value)
-                                self.setNeedsDisplay()
-        },
-                              easing: EaseCircular.easeInOut())
+        animator = ValueAnimator.animate("count",
+                                         from: 0,
+                                         to: 1,
+                                         duration: timeInterval,
+                                         easing: EaseCircular.easeInOut(),
+                                         onChanged: { [weak self] (p, v) in
+                                            guard let `self` = self else { return }
+                                            self.changeSize = self.bounds.width * CGFloat(v.value)
+                                            self.setNeedsDisplay()
+            },
+                                         option: nil)
+
         
         animator?.resume()
         
