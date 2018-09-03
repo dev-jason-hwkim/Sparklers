@@ -12,6 +12,9 @@ target 'Sparclers' do
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxViewController'
+    pod 'RxDataSources'
+    pod 'RxOptional'
+    pod 'RxGesture'
     
     # UI
     pod 'SnapKit'
@@ -20,21 +23,36 @@ target 'Sparclers' do
     # Logging
     pod 'CocoaLumberjack/Swift'
     
-    
-    # Misc.
-    pod 'Then'
 
     
     # Architecture
     pod 'ReactorKit'
     
+    # Animation
     pod 'ValueAnimator'
     
+    
+    
+    
+    # Misc.
+    pod 'Then'
+    pod 'ReusableKit'
+    
+    # SDK
+    pod 'Firebase/Core'
+    pod 'Firebase/Crash'
+    pod 'Firebase/AdMob'
+    pod 'Fabric'
+    pod 'Crashlytics'
+
+
     # Pods for Sparclers
     
     target 'SparclersTests' do
-        inherit! :search_paths
-        # Pods for testing
+        inherit! :complete
+        pod 'Stubber'
+        pod 'Quick'
+        pod 'Nimble'
     end
     
     target 'SparclersUITests' do
