@@ -12,15 +12,18 @@ target 'Sparclers' do
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxViewController'
+    
     # UI
     pod 'SnapKit'
-    
+    pod 'ManualLayout'
+
     # Logging
     pod 'CocoaLumberjack/Swift'
     
     
     # Misc.
     pod 'Then'
+
     
     # Architecture
     pod 'ReactorKit'
