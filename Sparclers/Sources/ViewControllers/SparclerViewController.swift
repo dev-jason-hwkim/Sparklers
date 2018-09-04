@@ -37,6 +37,14 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
     private let infoBtn = UIButton(type: .infoLight)
     
     
+    private let contentView = UIView().then {
+        $0.backgroundColor = .clear
+    }
+    
+    private let imgView = UIImageView().then {
+        $0.image = #imageLiteral(resourceName: "preview_sample")
+    }
+    
     private let colorList = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.backgroundColor = .clear
         $0.showsVerticalScrollIndicator = false
@@ -83,10 +91,7 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        logger.verbose(UIScreen.main.nativeScale)
-        logger.verbose(UIScreen.main.scale)
-        self.navigationController?.navigationBar.isTranslucent = true
+        self.extendedLayoutIncludesOpaqueBars = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.tintColor = .black
@@ -102,13 +107,30 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
     
     override func addViews() {
         super.addViews()
-        
+        self.contentView.addSubview(self.imgView)
+        self.view.addSubview(self.contentView)
         self.view.addSubview(self.colorList)
         self.view.addSubview(self.bannerView)
     }
     
     override func setupConstraints() {
         super.setupConstraints()
+        logger.verbose(self.safeAreaInsets)
+        self.contentView.snp.makeConstraints { (make) in
+            make.top.equalTo(0)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalTo(self.colorList.snp.top)
+        }
+        
+        self.imgView.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            let naviHeight = self.navigationController?.navigationBar.bounds.size.height ?? 0
+            make.centerY.equalToSuperview().offset(naviHeight)
+            guard let size = self.imgView.image?.size else { return }
+            make.height.equalTo(self.imgView.snp.width).dividedBy(size.width/size.height)
+        }
         
         self.colorList.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
