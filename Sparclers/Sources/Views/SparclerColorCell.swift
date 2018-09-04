@@ -63,7 +63,6 @@ final class SparclerColorCell: BaseCollectionViewCell, View {
     func bind(reactor: SparclerColorCellReactor) {
         reactor.state
             .map { $0.color.name }
-            .debug()
             .bind(to: self.name.rx.text)
             .disposed(by: self.disposeBag)
         
