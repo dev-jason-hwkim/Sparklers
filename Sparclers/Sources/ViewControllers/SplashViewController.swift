@@ -47,7 +47,9 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
         $0.backgroundColor = .clear
     }
     
-    private let appName = UILabel().then {
+
+    
+    private let appName = RainbowLabel().then {
         $0.font = Font.appName
         $0.textColor = .white
         $0.text = Bundle.main.infoDictionary![kCFBundleNameKey! as String] as? String
@@ -56,10 +58,6 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
         
         
 //        $0.layer.shadowColor = UIColor.red.cgColor
-        $0.layer.shadowOffset = CGSize.zero
-        $0.layer.shadowRadius = 3.0
-        $0.layer.shadowOpacity = 0.5
-        $0.layer.masksToBounds = false
         $0.layer.shouldRasterize = true
     }
     
@@ -109,7 +107,7 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.gradientLayer.frame = self.appName.bounds
+//        self.gradientLayer.frame = self.appName.bounds
     }
     
     override func addViews() {
@@ -117,7 +115,6 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
         self.view.addSubview(self.coverView)
         self.coverView.addSubview(self.squareLineView)
         self.coverView.addSubview(self.appName)
-//        self.appName.layer.addSublayer(self.gradientLayer)
         self.view.addSubview(self.touchScreen)
     }
     
@@ -197,4 +194,6 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
                         self.touchScreen.alpha = 1.0
         }, completion: nil)
     }
+    
+
 }
