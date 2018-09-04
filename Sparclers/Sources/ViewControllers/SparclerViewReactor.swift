@@ -54,7 +54,6 @@ final class SparclerViewReactor: Reactor {
         
         switch action {
         case .loadColors:
-            logger.verbose(self.colorList)
             return Observable.just(Mutation.setColorList(self.colorList))
 
         }
