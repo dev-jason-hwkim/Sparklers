@@ -7,6 +7,8 @@
 //
 
 
+import CoreImage
+
 import RxSwift
 import RxCocoa
 import RxDataSources
@@ -19,11 +21,21 @@ import GoogleMobileAds
 
 
 
+
+
 final class SparclerViewController: BaseViewController, ReactorKit.View {
     
     
     private struct Metric {
+        
+        
+        static let paletteLeft: CGFloat = 10
         static let colorListHeight: CGFloat = 60.0
+        static let colorListItemSize: CGFloat = 44.0
+        static let colorListItemSpacing: CGFloat = 10.0
+        static let colorListSectioninset = UIEdgeInsetsMake(0, 10, 0, 10)
+        
+        
     }
     
     
@@ -41,9 +53,10 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
         $0.backgroundColor = .clear
     }
     
-    private let imgView = UIImageView().then {
-        $0.image = #imageLiteral(resourceName: "preview_sample")
-    }
+    private let imgView = UIImageView()
+    
+    private let paletteView = UIView()
+    
     
     private let colorList = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.backgroundColor = .clear
@@ -108,7 +121,9 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
     override func addViews() {
         super.addViews()
         self.contentView.addSubview(self.imgView)
+        
         self.view.addSubview(self.contentView)
+        self.view.addSubview(self.paletteView)
         self.view.addSubview(self.colorList)
         self.view.addSubview(self.bannerView)
     }
@@ -132,8 +147,14 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
             make.height.equalTo(self.imgView.snp.width).dividedBy(size.width/size.height)
         }
         
+        self.paletteView.snp.makeConstraints { (make) in
+            make.left.equalTo(Metric.paletteLeft)
+            make.bottom.equalTo(self.bannerView.snp.top).offset(-(Metric.colorListHeight - Metric.colorListItemSize) / 2.0)
+            make.width.equalTo(Metric.colorListItemSize)
+            make.height.equalTo(Metric.colorListItemSize)
+        }
         self.colorList.snp.makeConstraints { (make) in
-            make.left.equalToSuperview()
+            make.left.equalTo(self.paletteView.snp.right).offset(Metric.colorListItemSpacing)
             make.right.equalToSuperview()
             make.bottom.equalTo(self.bannerView.snp.top)
             make.height.equalTo(Metric.colorListHeight)
@@ -169,19 +190,24 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
                     return reactor.currentState.color.color
                 }
             }
-            .subscribe(onNext: { (color) in
-                self.view.backgroundColor = color
-            })
+            .map { Reactor.Action.selectColor($0) }
+            .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
         
         
         self.colorList.rx.setDelegate(self).disposed(by: self.disposeBag)
         
+        reactor.state
+            .map { $0.image }
+            .bind(to: self.imgView.rx.image)
+            .disposed(by: self.disposeBag)
         
         reactor.state
             .map { $0.sections }
             .bind(to: self.colorList.rx.items(dataSource: self.dataSource))
             .disposed(by: self.disposeBag)
+        
+        
         
     }
     
@@ -189,15 +215,15 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
 extension SparclerViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 44, height: 44)
+        return CGSize(width: Metric.colorListItemSize, height: Metric.colorListItemSize)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return Metric.colorListItemSpacing
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(0, 10, 0, 10)
+        return Metric.colorListSectioninset
     }
     
 }

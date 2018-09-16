@@ -18,16 +18,19 @@ final class SparclerViewReactor: Reactor {
     
     enum Action {
         case loadColors
+        case selectColor(UIColor)
         
     }
     
     enum Mutation {
         case setColorList([Color])
+        case setColorFilter(UIColor)
         
         
     }
     
     struct State {
+        var image: UIImage? = #imageLiteral(resourceName: "preview_sample")
         var sections: [SparclerColorCollectionViewSection] = [.setItems([])]
         
     }
@@ -39,6 +42,9 @@ final class SparclerViewReactor: Reactor {
     }()
     
     private let colorCellReactorFactory: (Color) -> SparclerColorCellReactor
+    
+    
+    private let originalImage = #imageLiteral(resourceName: "preview_sample")
     
     
     init(
@@ -56,6 +62,9 @@ final class SparclerViewReactor: Reactor {
         case .loadColors:
             return Observable.just(Mutation.setColorList(self.colorList))
 
+        case .selectColor(let color):
+            return Observable.just(Mutation.setColorFilter(color))
+
         }
         
     }
@@ -67,6 +76,8 @@ final class SparclerViewReactor: Reactor {
         case .setColorList(let colors):
             let sectionItmes = self.colorListViewSectionItems(with: colors)
             state.sections = [.setItems(sectionItmes)]
+        case .setColorFilter(let color):
+            state.image = originalImage.tint(color: color)
         }
         
         return state
