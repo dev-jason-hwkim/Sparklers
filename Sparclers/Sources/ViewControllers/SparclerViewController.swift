@@ -29,7 +29,9 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
     private struct Metric {
         
         
-        static let paletteLeft: CGFloat = 10
+        static let paletteLeft: CGFloat = 10.0
+        
+        static let lineHeight: CGFloat = 15.0
         static let colorListHeight: CGFloat = 60.0
         static let colorListItemSize: CGFloat = 44.0
         static let colorListItemSpacing: CGFloat = 10.0
@@ -55,7 +57,14 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
     
     private let imgView = UIImageView()
     
-    private let paletteView = UIView()
+    private let paletteView = ColorPaletteView().then {
+        $0.layer.cornerRadius = Metric.colorListItemSize / 2.0
+        $0.clipsToBounds = true
+    }
+    
+    private let lineView = UIView().then {
+        $0.backgroundColor = .black
+    }
     
     
     private let colorList = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
@@ -116,6 +125,9 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
         self.bannerView.delegate = self
         self.bannerView.load(GADRequest())
         
+        self.view.window?.screen.brightness = 0.1
+        logger.verbose()
+        
     }
     
     override func addViews() {
@@ -124,6 +136,8 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
         
         self.view.addSubview(self.contentView)
         self.view.addSubview(self.paletteView)
+        self.view.addSubview(self.lineView)
+
         self.view.addSubview(self.colorList)
         self.view.addSubview(self.bannerView)
     }
@@ -153,8 +167,17 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
             make.width.equalTo(Metric.colorListItemSize)
             make.height.equalTo(Metric.colorListItemSize)
         }
-        self.colorList.snp.makeConstraints { (make) in
+        
+        self.lineView.snp.makeConstraints { (make) in
             make.left.equalTo(self.paletteView.snp.right).offset(Metric.colorListItemSpacing)
+            make.centerY.equalTo(self.paletteView.snp.centerY)
+            make.width.equalTo(1.0)
+            make.height.equalTo(Metric.lineHeight)
+        }
+        
+        
+        self.colorList.snp.makeConstraints { (make) in
+            make.left.equalTo(self.lineView.snp.right)
             make.right.equalToSuperview()
             make.bottom.equalTo(self.bannerView.snp.top)
             make.height.equalTo(Metric.colorListHeight)
@@ -192,6 +215,20 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
             }
             .map { Reactor.Action.selectColor($0) }
             .bind(to: reactor.action)
+            .disposed(by: self.disposeBag)
+        
+        
+        self.colorList.rx.itemSelected(dataSource: self.dataSource)
+            .map { (item) -> UIColor in
+                switch item {
+                case .setItem(let reactor):
+                    return reactor.currentState.color.color
+                }
+            }
+            .subscribe(onNext: {[weak self] (color) in
+                guard let `self` = self else { return }
+                self.view.backgroundColor = color
+            })
             .disposed(by: self.disposeBag)
         
         

@@ -27,17 +27,16 @@
 		2C6DB5B7210EA04600BC7057 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5B6210EA04600BC7057 /* Logger.swift */; };
 		2CB1707F214F3594007B65CF /* UIImage-Tint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB1707E214F3594007B65CF /* UIImage-Tint.swift */; };
 		2CB17081214F3623007B65CF /* RainbowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB17080214F3623007B65CF /* RainbowLabel.swift */; };
+		2CB17082214F412D007B65CF /* StubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A1213CBB81005FD69C /* StubError.swift */; };
+		2CB17083214F412F007B65CF /* StubAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A0213CBB81005FD69C /* StubAppDelegate.swift */; };
+		2CB17084214F4133007B65CF /* TestMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A3213CBB81005FD69C /* TestMain.swift */; };
+		2CB17087214F4324007B65CF /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB17086214F4324007B65CF /* ColorPaletteView.swift */; };
 		2CE47791213CB6F2005FD69C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4778F213CB6F2005FD69C /* GoogleService-Info.plist */; };
-		2CE47792213CB6F2005FD69C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE47790213CB6F2005FD69C /* Info.plist */; };
 		2CE47794213CB785005FD69C /* SparclerViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE47793213CB785005FD69C /* SparclerViewReactor.swift */; };
 		2CE47796213CB790005FD69C /* SparclerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE47795213CB790005FD69C /* SparclerViewController.swift */; };
 		2CE47798213CB98F005FD69C /* SparclerColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE47797213CB98F005FD69C /* SparclerColorCell.swift */; };
 		2CE4779A213CB9FC005FD69C /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE47799213CB9FC005FD69C /* BaseCollectionViewCell.swift */; };
 		2CE4779C213CBA3C005FD69C /* SparclerColorCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4779B213CBA3C005FD69C /* SparclerColorCellReactor.swift */; };
-		2CE477A6213CBB81005FD69C /* StubAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A0213CBB81005FD69C /* StubAppDelegate.swift */; };
-		2CE477A7213CBB81005FD69C /* StubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A1213CBB81005FD69C /* StubError.swift */; };
-		2CE477A9213CBB81005FD69C /* TestMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A3213CBB81005FD69C /* TestMain.swift */; };
-		2CE477AA213CBB81005FD69C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE477A4213CBB81005FD69C /* Info.plist */; };
 		2CE477AD213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477AC213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift */; };
 		2CE477AE213CBDAA005FD69C /* TestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A2213CBB81005FD69C /* TestConfiguration.swift */; };
 		2CE477B1213D3601005FD69C /* UICollectionView-Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477B0213D3601005FD69C /* UICollectionView-Rx.swift */; };
@@ -79,6 +78,7 @@
 		2C6DB5B6210EA04600BC7057 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		2CB1707E214F3594007B65CF /* UIImage-Tint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage-Tint.swift"; sourceTree = "<group>"; };
 		2CB17080214F3623007B65CF /* RainbowLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowLabel.swift; sourceTree = "<group>"; };
+		2CB17086214F4324007B65CF /* ColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
 		2CE4778F213CB6F2005FD69C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CE47790213CB6F2005FD69C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CE47793213CB785005FD69C /* SparclerViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparclerViewReactor.swift; sourceTree = "<group>"; };
@@ -174,6 +174,7 @@
 				2CB17080214F3623007B65CF /* RainbowLabel.swift */,
 				2CE47797213CB98F005FD69C /* SparclerColorCell.swift */,
 				2CE4779B213CBA3C005FD69C /* SparclerColorCellReactor.swift */,
+				2CB17086214F4324007B65CF /* ColorPaletteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -410,9 +411,7 @@
 			files = (
 				2C61344F210E9586008AE829 /* LaunchScreen.storyboard in Resources */,
 				2CE47791213CB6F2005FD69C /* GoogleService-Info.plist in Resources */,
-				2CE477AA213CBB81005FD69C /* Info.plist in Resources */,
 				2C61344C210E9586008AE829 /* Assets.xcassets in Resources */,
-				2CE47792213CB6F2005FD69C /* Info.plist in Resources */,
 				2C6A2167213BDB33006C5450 /* sparkler.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,7 +575,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CE477A7213CBB81005FD69C /* StubError.swift in Sources */,
 				2CE47794213CB785005FD69C /* SparclerViewReactor.swift in Sources */,
 				2CE477AD213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift in Sources */,
 				2C6DB5B7210EA04600BC7057 /* Logger.swift in Sources */,
@@ -586,8 +584,8 @@
 				2C6A215C213BD65D006C5450 /* PlayerView.swift in Sources */,
 				2CE477B1213D3601005FD69C /* UICollectionView-Rx.swift in Sources */,
 				2C6DB5B0210E9C7400BC7057 /* CompositionRoot.swift in Sources */,
-				2CE477A9213CBB81005FD69C /* TestMain.swift in Sources */,
 				2C6A216E213BEC61006C5450 /* Constants.swift in Sources */,
+				2CB17087214F4324007B65CF /* ColorPaletteView.swift in Sources */,
 				2C6DB5B4210E9F8900BC7057 /* BaseViewController.swift in Sources */,
 				2C613445210E9586008AE829 /* AppDelegate.swift in Sources */,
 				2C6DB5AE210E9B7200BC7057 /* main.swift in Sources */,
@@ -595,7 +593,6 @@
 				2C6A214F213BC7F0006C5450 /* Color.swift in Sources */,
 				2CB17081214F3623007B65CF /* RainbowLabel.swift in Sources */,
 				2CE47798213CB98F005FD69C /* SparclerColorCell.swift in Sources */,
-				2CE477A6213CBB81005FD69C /* StubAppDelegate.swift in Sources */,
 				2C6A215F213BD74C006C5450 /* UIView-Debug.swift in Sources */,
 				2CE4779C213CBA3C005FD69C /* SparclerColorCellReactor.swift in Sources */,
 				2CB1707F214F3594007B65CF /* UIImage-Tint.swift in Sources */,
@@ -609,7 +606,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB17082214F412D007B65CF /* StubError.swift in Sources */,
 				2CE477AE213CBDAA005FD69C /* TestConfiguration.swift in Sources */,
+				2CB17084214F4133007B65CF /* TestMain.swift in Sources */,
+				2CB17083214F412F007B65CF /* StubAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
