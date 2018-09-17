@@ -90,7 +90,7 @@ final class SparclerViewReactor: Reactor {
             Color(color: .red, name: "R"),
             Color(color: UIColor.color(red: 240, green: 0, blue: 255), name: "P"),
             Color(color: UIColor.color(red: 0, green: 236, blue: 255), name: "C"),
-            Color(color: UIColor.color(red: 137, green: 255, blue: 255), name: "G"),
+            Color(color: UIColor.color(red: 137, green: 255, blue: 0), name: "G"),
             Color(color: UIColor.color(red: 255, green: 244, blue: 0), name: "Y")
         ]
     }
