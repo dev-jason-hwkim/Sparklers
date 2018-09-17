@@ -25,6 +25,8 @@
 		2C6DB5B0210E9C7400BC7057 /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5AF210E9C7400BC7057 /* CompositionRoot.swift */; };
 		2C6DB5B4210E9F8900BC7057 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5B3210E9F8900BC7057 /* BaseViewController.swift */; };
 		2C6DB5B7210EA04600BC7057 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5B6210EA04600BC7057 /* Logger.swift */; };
+		2CB1707F214F3594007B65CF /* UIImage-Tint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB1707E214F3594007B65CF /* UIImage-Tint.swift */; };
+		2CB17081214F3623007B65CF /* RainbowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB17080214F3623007B65CF /* RainbowLabel.swift */; };
 		2CE47791213CB6F2005FD69C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4778F213CB6F2005FD69C /* GoogleService-Info.plist */; };
 		2CE47792213CB6F2005FD69C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE47790213CB6F2005FD69C /* Info.plist */; };
 		2CE47794213CB785005FD69C /* SparclerViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE47793213CB785005FD69C /* SparclerViewReactor.swift */; };
@@ -39,20 +41,12 @@
 		2CE477AD213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477AC213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift */; };
 		2CE477AE213CBDAA005FD69C /* TestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A2213CBB81005FD69C /* TestConfiguration.swift */; };
 		2CE477B1213D3601005FD69C /* UICollectionView-Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477B0213D3601005FD69C /* UICollectionView-Rx.swift */; };
-		2D13F495B1AC7B8632EB01D1 /* Pods_SparclersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4CA260C1A04662E735B20 /* Pods_SparclersUITests.framework */; };
 		6C0AB1BD4B29ACE417102437 /* Pods_Sparclers_SparclersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1B41EBE2EB1C2168452233 /* Pods_Sparclers_SparclersTests.framework */; };
 		9F414682399B8EE2664CD701 /* Pods_Sparclers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF57527E32E918B6275D6ACF /* Pods_Sparclers.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		2C613456210E9586008AE829 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C613439210E9586008AE829 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2C613440210E9586008AE829;
-			remoteInfo = Sparclers;
-		};
-		2C613461210E9587008AE829 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2C613439210E9586008AE829 /* Project object */;
 			proxyType = 1;
@@ -69,7 +63,6 @@
 		2C61344B210E9586008AE829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C61344E210E9586008AE829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C613455210E9586008AE829 /* SparclersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparclersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C613460210E9587008AE829 /* SparclersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparclersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6A214E213BC7F0006C5450 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2C6A2150213BC86D006C5450 /* ColorPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPackage.swift; sourceTree = "<group>"; };
 		2C6A2156213BD351006C5450 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +77,8 @@
 		2C6DB5AF210E9C7400BC7057 /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 		2C6DB5B3210E9F8900BC7057 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2C6DB5B6210EA04600BC7057 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		2CB1707E214F3594007B65CF /* UIImage-Tint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage-Tint.swift"; sourceTree = "<group>"; };
+		2CB17080214F3623007B65CF /* RainbowLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowLabel.swift; sourceTree = "<group>"; };
 		2CE4778F213CB6F2005FD69C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CE47790213CB6F2005FD69C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CE47793213CB785005FD69C /* SparclerViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparclerViewReactor.swift; sourceTree = "<group>"; };
@@ -128,14 +123,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C61345D210E9587008AE829 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2D13F495B1AC7B8632EB01D1 /* Pods_SparclersUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -144,7 +131,6 @@
 			children = (
 				2C613443210E9586008AE829 /* Sparclers */,
 				2CE4779D213CBB81005FD69C /* SparclersTests */,
-				2CE477A5213CBB81005FD69C /* SparclersUITests */,
 				2C613442210E9586008AE829 /* Products */,
 				5A516FEDB4BC655C8A51FC9B /* Pods */,
 				A1F8B75F140DC358F717A37F /* Frameworks */,
@@ -156,7 +142,6 @@
 			children = (
 				2C613441210E9586008AE829 /* Sparclers.app */,
 				2C613455210E9586008AE829 /* SparclersTests.xctest */,
-				2C613460210E9587008AE829 /* SparclersUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +171,7 @@
 				2C6A215B213BD65D006C5450 /* PlayerView.swift */,
 				2C6A2168213BE425006C5450 /* SquareLineView.swift */,
 				2CE47799213CB9FC005FD69C /* BaseCollectionViewCell.swift */,
+				2CB17080214F3623007B65CF /* RainbowLabel.swift */,
 				2CE47797213CB98F005FD69C /* SparclerColorCell.swift */,
 				2CE4779B213CBA3C005FD69C /* SparclerColorCellReactor.swift */,
 			);
@@ -196,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				2C6A215E213BD74C006C5450 /* UIView-Debug.swift */,
+				2CB1707E214F3594007B65CF /* UIImage-Tint.swift */,
 				2C6A216B213BE9C3006C5450 /* UIColor-Rgb.swift */,
 				2C6A216D213BEC61006C5450 /* Constants.swift */,
 			);
@@ -294,13 +281,6 @@
 			path = Stubs;
 			sourceTree = "<group>";
 		};
-		2CE477A5213CBB81005FD69C /* SparclersUITests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SparclersUITests;
-			sourceTree = "<group>";
-		};
 		2CE477AB213CBBF2005FD69C /* Sections */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,25 +365,6 @@
 			productReference = 2C613455210E9586008AE829 /* SparclersTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2C61345F210E9587008AE829 /* SparclersUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2C61346F210E9587008AE829 /* Build configuration list for PBXNativeTarget "SparclersUITests" */;
-			buildPhases = (
-				854C986B2DA353A0ABFB13E8 /* [CP] Check Pods Manifest.lock */,
-				2C61345C210E9587008AE829 /* Sources */,
-				2C61345D210E9587008AE829 /* Frameworks */,
-				2C61345E210E9587008AE829 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2C613462210E9587008AE829 /* PBXTargetDependency */,
-			);
-			name = SparclersUITests;
-			productName = SparclersUITests;
-			productReference = 2C613460210E9587008AE829 /* SparclersUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -418,10 +379,6 @@
 						CreatedOnToolsVersion = 9.4.1;
 					};
 					2C613454210E9586008AE829 = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 2C613440210E9586008AE829;
-					};
-					2C61345F210E9587008AE829 = {
 						CreatedOnToolsVersion = 9.4.1;
 						TestTargetID = 2C613440210E9586008AE829;
 					};
@@ -442,7 +399,6 @@
 			targets = (
 				2C613440210E9586008AE829 /* Sparclers */,
 				2C613454210E9586008AE829 /* SparclersTests */,
-				2C61345F210E9587008AE829 /* SparclersUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -462,13 +418,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2C613453210E9586008AE829 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2C61345E210E9587008AE829 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -602,24 +551,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		854C986B2DA353A0ABFB13E8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SparclersUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E18CE524D87EC00FC94959F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -662,10 +593,12 @@
 				2C6DB5AE210E9B7200BC7057 /* main.swift in Sources */,
 				2CE4779A213CB9FC005FD69C /* BaseCollectionViewCell.swift in Sources */,
 				2C6A214F213BC7F0006C5450 /* Color.swift in Sources */,
+				2CB17081214F3623007B65CF /* RainbowLabel.swift in Sources */,
 				2CE47798213CB98F005FD69C /* SparclerColorCell.swift in Sources */,
 				2CE477A6213CBB81005FD69C /* StubAppDelegate.swift in Sources */,
 				2C6A215F213BD74C006C5450 /* UIView-Debug.swift in Sources */,
 				2CE4779C213CBA3C005FD69C /* SparclerColorCellReactor.swift in Sources */,
+				2CB1707F214F3594007B65CF /* UIImage-Tint.swift in Sources */,
 				2C6A2169213BE425006C5450 /* SquareLineView.swift in Sources */,
 				2C6A2151213BC86D006C5450 /* ColorPackage.swift in Sources */,
 				2C6A2157213BD351006C5450 /* SplashViewController.swift in Sources */,
@@ -680,13 +613,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C61345C210E9587008AE829 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -694,11 +620,6 @@
 			isa = PBXTargetDependency;
 			target = 2C613440210E9586008AE829 /* Sparclers */;
 			targetProxy = 2C613456210E9586008AE829 /* PBXContainerItemProxy */;
-		};
-		2C613462210E9587008AE829 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2C613440210E9586008AE829 /* Sparclers */;
-			targetProxy = 2C613461210E9587008AE829 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -912,48 +833,6 @@
 			};
 			name = Release;
 		};
-		2C613470210E9587008AE829 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E528A20A21FA4D6308A3103E /* Pods-SparclersUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6F5H8KU4M7;
-				INFOPLIST_FILE = SparclersUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyunwoo.SparclersUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Sparclers;
-			};
-			name = Debug;
-		};
-		2C613471210E9587008AE829 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D59F8235BEFDD5BC072AD23A /* Pods-SparclersUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6F5H8KU4M7;
-				INFOPLIST_FILE = SparclersUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyunwoo.SparclersUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Sparclers;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -980,15 +859,6 @@
 			buildConfigurations = (
 				2C61346D210E9587008AE829 /* Debug */,
 				2C61346E210E9587008AE829 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2C61346F210E9587008AE829 /* Build configuration list for PBXNativeTarget "SparclersUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2C613470210E9587008AE829 /* Debug */,
-				2C613471210E9587008AE829 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
