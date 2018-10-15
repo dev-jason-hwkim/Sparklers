@@ -188,7 +188,7 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     private func startTouchScreenAnimation() {
         UIView.animate(withDuration: 0.8,
                        delay: 1.0,
-                       options: [.repeat, .autoreverse],
+                       options: [.repeat, .autoreverse, .allowUserInteraction],
                        animations: {
                         self.touchScreen.alpha = 0.0
                         self.touchScreen.alpha = 1.0
