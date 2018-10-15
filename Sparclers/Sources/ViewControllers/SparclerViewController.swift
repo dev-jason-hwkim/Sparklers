@@ -18,6 +18,8 @@ import ReusableKit
 
 import GoogleMobileAds
 
+import SideMenu
+
 
 
 
@@ -52,10 +54,12 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
     
     
     private let contentView = UIView().then {
-        $0.backgroundColor = .clear
+        $0.backgroundColor = .black
     }
     
-    private let imgView = UIImageView()
+    private let imgView = UIImageView().then {
+        $0.backgroundColor = .clear
+    }
     
     private let paletteView = ColorPaletteView().then {
         $0.layer.cornerRadius = Metric.colorListItemSize / 2.0
@@ -99,6 +103,11 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
     }
     )
     
+    
+    private var interstitial: GADInterstitial!
+
+
+    
 
     init(
         reactor: SparclerViewReactor
@@ -121,13 +130,8 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.infoBtn)
         
-        self.bannerView.rootViewController = self
-        self.bannerView.delegate = self
-        self.bannerView.load(GADRequest())
-        
-        self.view.window?.screen.brightness = 0.1
-        logger.verbose()
-        
+
+        self.setupGARequest()
     }
     
     override func addViews() {
@@ -140,23 +144,24 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
 
         self.view.addSubview(self.colorList)
         self.view.addSubview(self.bannerView)
+        
+        
     }
     
     override func setupConstraints() {
         super.setupConstraints()
-        logger.verbose(self.safeAreaInsets)
         self.contentView.snp.makeConstraints { (make) in
-            make.top.equalTo(0)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.bottom.equalTo(self.colorList.snp.top)
+          
+            make.centerY.equalToSuperview().offset(-Metric.colorListHeight/2.0)
+            make.height.equalTo(self.contentView.snp.width)
         }
         
         self.imgView.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            let naviHeight = self.navigationController?.navigationBar.bounds.size.height ?? 0
-            make.centerY.equalToSuperview().offset(naviHeight)
+            make.centerY.equalToSuperview()
             guard let size = self.imgView.image?.size else { return }
             make.height.equalTo(self.imgView.snp.width).dividedBy(size.width/size.height)
         }
@@ -190,8 +195,7 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
         }
     }
     
-    
-    
+
     func bind(reactor: SparclerViewReactor) {
         self.rx.viewDidLoad
             .map { Reactor.Action.loadColors }
@@ -201,10 +205,29 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
         self.infoBtn.rx
             .tap
             .subscribe(onNext: { (_) in
-                logger.verbose("guide")
+                let menu = UISideMenuNavigationController(rootViewController: UIViewController())
+                SideMenuManager.default.menuRightNavigationController = menu
+                SideMenuManager.default.menuPresentMode = .viewSlideInOut
+                SideMenuManager.default.menuShadowColor = .black
+                SideMenuManager.default.menuShadowOpacity = 0.5
+            
+                SideMenuManager.default.menuWidth = SCREEN_SIZE.width * 3.0 / 4.0
+                self.present(menu, animated: true, completion: nil)
             })
             .disposed(by: self.disposeBag)
         
+        
+        self.paletteView.rx
+            .tapGesture()
+            .when(.ended)
+            .subscribe(onNext: { [weak self] (_) in
+                guard let `self` = self else { return }
+      
+                if self.interstitial.isReady {
+                    self.interstitial.present(fromRootViewController: self)
+                }
+            })
+            .disposed(by: self.disposeBag)
         
         self.colorList.rx.itemSelected(dataSource: self.dataSource)
             .map { (item) -> UIColor in
@@ -217,19 +240,6 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
         
-        
-        self.colorList.rx.itemSelected(dataSource: self.dataSource)
-            .map { (item) -> UIColor in
-                switch item {
-                case .setItem(let reactor):
-                    return reactor.currentState.color.color
-                }
-            }
-            .subscribe(onNext: {[weak self] (color) in
-                guard let `self` = self else { return }
-                self.view.backgroundColor = color
-            })
-            .disposed(by: self.disposeBag)
         
         
         self.colorList.rx.setDelegate(self).disposed(by: self.disposeBag)
@@ -247,6 +257,66 @@ final class SparclerViewController: BaseViewController, ReactorKit.View {
         
         
     }
+    
+    private func setupGARequest() {
+        self.bannerView.rootViewController = self
+        self.bannerView.delegate = self
+        self.interstitial = self.createAndLoadInterstitial()
+        let request = GADRequest()
+        self.bannerView.load(request)
+    }
+    
+    private func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: GoogleAdMobInfo.AdUnitId.selectColorPage.rawValue)
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+
+    
+    
+    
+    func shwoAlert() {
+        let alert = UIAlertController(title: "Select a Color", message: nil, preferredStyle: .alert)
+
+        
+        alert.setValue(self.creatCustomVC(), forKey: "contentViewController")
+        
+        let okAction = UIAlertAction(title: "Custom", style: .default) { (_) in
+            logger.verbose("Custom")
+        }
+        let select = UIAlertAction(title: "Select", style: .default) { (action) in
+            
+            action.setValue("Custom", forKey: "title")
+        }
+     
+        alert.addAction(okAction)
+        alert.addAction(select)
+        self.present(alert, animated: false)
+        
+    }
+    
+    
+    
+    func creatCustomVC() -> UIViewController {
+        
+        let customVC = UIViewController()
+        
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
+        customVC.view = containerView
+        
+        customVC.preferredContentSize.width = self.view.frame.width
+        
+        customVC.preferredContentSize.height = 300
+        
+        containerView.backgroundColor = UIColor.red
+        
+        return customVC
+        
+    }
+    
+    
     
 }
 extension SparclerViewController: UICollectionViewDelegateFlowLayout {
@@ -297,6 +367,42 @@ extension SparclerViewController: GADBannerViewDelegate {
     func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
         logger.verbose("adViewWillLeaveApplication")
     }
+}
+
+
+extension SparclerViewController: GADInterstitialDelegate {
+
+    /// Tells the delegate an ad request succeeded.
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        logger.verbose("interstitialDidReceiveAd")
+    }
+    
+    /// Tells the delegate an ad request failed.
+    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+        logger.verbose("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    /// Tells the delegate that an interstitial will be presented.
+    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+        logger.verbose("interstitialWillPresentScreen")
+    }
+    
+    /// Tells the delegate the interstitial is to be animated off the screen.
+    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+        logger.verbose("interstitialWillDismissScreen")
+    }
+    
+    /// Tells the delegate the interstitial had been animated off the screen.
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        logger.verbose("interstitialDidDismissScreen")
+    }
+    
+    /// Tells the delegate that a user click will open another app
+    /// (such as the App Store), backgrounding the current app.
+    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+        logger.verbose("interstitialWillLeaveApplication")
+    }
+    
 }
 
 

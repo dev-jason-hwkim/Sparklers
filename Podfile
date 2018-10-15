@@ -15,7 +15,7 @@ target 'Sparclers' do
     pod 'RxDataSources'
     pod 'RxOptional'
     pod 'RxGesture'
-    
+    
     # UI
     pod 'SnapKit'
     pod 'ManualLayout'
@@ -32,7 +32,9 @@ target 'Sparclers' do
     pod 'ValueAnimator'
     
     
-    
+    # UI
+    pod 'SideMenu'
+
     
     # Misc.
     pod 'Then'
@@ -55,9 +57,6 @@ target 'Sparclers' do
         pod 'Nimble'
     end
     
-    target 'SparclersUITests' do
-        inherit! :search_paths
-        # Pods for testing
-    end
+
     
 end
