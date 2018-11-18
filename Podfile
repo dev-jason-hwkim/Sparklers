@@ -1,7 +1,7 @@
 project 'Sparclers.xcodeproj/'
 
 # Uncomment the next line to define a global platform for your project
- platform :ios, '10.0'
+platform :ios, '10.0'
 
 target 'Sparclers' do
     # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -19,11 +19,11 @@ target 'Sparclers' do
     # UI
     pod 'SnapKit'
     pod 'ManualLayout'
-
+    
     # Logging
     pod 'CocoaLumberjack/Swift'
     
-
+    
     
     # Architecture
     pod 'ReactorKit'
@@ -34,7 +34,7 @@ target 'Sparclers' do
     
     # UI
     pod 'SideMenu'
-
+    
     
     # Misc.
     pod 'Then'
@@ -46,17 +46,8 @@ target 'Sparclers' do
     pod 'Firebase/AdMob'
     pod 'Fabric'
     pod 'Crashlytics'
-
-
-    # Pods for Sparclers
-    
-    target 'SparclersTests' do
-        inherit! :complete
-        pod 'Stubber'
-        pod 'Quick'
-        pod 'Nimble'
-    end
     
 
+    
     
 end

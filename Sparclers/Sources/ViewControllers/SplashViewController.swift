@@ -21,10 +21,11 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     private struct Metric {
         static let touchScreenHeight: CGFloat = 70.0
         static let squareLineViewWidth: CGFloat = 300.0// * SCREEN_RATIO
+        static let logoLeftRight: CGFloat = 60.0
     }
     
     private struct Color {
-        static let coverView = UIColor.color(red: 255, green: 255, blue: 255, alpha: 0.4)
+        static let coverView = UIColor.color(red: 29, green: 34, blue: 83, alpha: 0.73)
     }
     
     private struct Font {
@@ -40,26 +41,30 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     
     private let coverView = UIView().then {
         $0.backgroundColor = Color.coverView
-        $0.alpha = 0.0
+        
     }
     
-    private let squareLineView = SquareLineView().then {
-        $0.backgroundColor = .clear
+    private let logoImgView = UIImageView().then {
+        $0.image = #imageLiteral(resourceName: "splash_center_logo")
     }
     
-
-    
-    private let appName = RainbowLabel().then {
-        $0.font = Font.appName
-        $0.textColor = .white
-        $0.text = Bundle.main.infoDictionary![kCFBundleNameKey! as String] as? String
-        
-
-        
-        
-//        $0.layer.shadowColor = UIColor.red.cgColor
-        $0.layer.shouldRasterize = true
-    }
+//    private let squareLineView = SquareLineView().then {
+//        $0.backgroundColor = .clear
+//    }
+//
+//
+//
+//    private let appName = RainbowLabel().then {
+//        $0.font = Font.appName
+//        $0.textColor = .white
+//        $0.text = Bundle.main.infoDictionary![kCFBundleNameKey! as String] as? String
+//
+//
+//
+//
+////        $0.layer.shadowColor = UIColor.red.cgColor
+//        $0.layer.shouldRasterize = true
+//    }
     
     
     private let gradientLayer = CAGradientLayer().then {
@@ -102,7 +107,11 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
         super.viewDidLoad()
         self.startCoverViewAnimation()
         self.startTouchScreenAnimation()
-        self.squareLineView.animationStart(timeInterval: 1)
+//        self.squareLineView.animationStart(timeInterval: 1)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func viewDidLayoutSubviews() {
@@ -113,8 +122,9 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     override func addViews() {
         self.view.addSubview(self.playerView)
         self.view.addSubview(self.coverView)
-        self.coverView.addSubview(self.squareLineView)
-        self.coverView.addSubview(self.appName)
+        self.coverView.addSubview(self.logoImgView)
+//        self.coverView.addSubview(self.squareLineView)
+//        self.coverView.addSubview(self.appName)
         self.view.addSubview(self.touchScreen)
     }
     
@@ -128,15 +138,25 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
             make.edges.equalToSuperview()
         }
         
-        self.squareLineView.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-            make.width.equalTo(Metric.squareLineViewWidth)
-            make.height.equalTo(self.squareLineView.snp.width)
+        self.logoImgView.snp.makeConstraints { (make) in
+            make.left.equalTo(Metric.logoLeftRight)
+            make.right.equalTo(-Metric.logoLeftRight)
+            make.centerY.equalToSuperview().offset(-Metric.touchScreenHeight / 2.0)
+        
+            if let image = self.logoImgView.image {
+                make.height.equalTo(self.logoImgView.snp.width).dividedBy(image.size.width/image.size.height)
+            }
         }
         
-        self.appName.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-        }
+//        self.squareLineView.snp.makeConstraints { (make) in
+//            make.center.equalToSuperview()
+//            make.width.equalTo(Metric.squareLineViewWidth)
+//            make.height.equalTo(self.squareLineView.snp.width)
+//        }
+//
+//        self.appName.snp.makeConstraints { (make) in
+//            make.center.equalToSuperview()
+//        }
         
         self.touchScreen.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
@@ -181,13 +201,23 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     }
     
     private func startCoverViewAnimation() {
+        self.coverView.alpha = 0.0
+
         UIView.animate(withDuration: 1) {
             self.coverView.alpha = 1.0
         }
+        self.logoImgView.alpha = 0.0
+
+        UIView.animate(withDuration: 0.8, delay: 1.0,
+                       options: UIViewAnimationOptions.curveEaseInOut,
+                       animations: {
+                        self.logoImgView.alpha = 1.0
+
+        })
     }
     private func startTouchScreenAnimation() {
         UIView.animate(withDuration: 0.8,
-                       delay: 1.0,
+                       delay: 1.5,
                        options: [.repeat, .autoreverse, .allowUserInteraction],
                        animations: {
                         self.touchScreen.alpha = 0.0
