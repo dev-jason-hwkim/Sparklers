@@ -1,9 +1,9 @@
-project 'Sparclers.xcodeproj/'
+project 'Sparklers.xcodeproj/'
 
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
 
-target 'Sparclers' do
+target 'Sparklers' do
     # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
     use_frameworks!
     
@@ -15,11 +15,12 @@ target 'Sparclers' do
     pod 'RxDataSources'
     pod 'RxOptional'
     pod 'RxGesture'
-    
+
     # UI
     pod 'SnapKit'
     pod 'ManualLayout'
-    
+    pod 'MaterialComponents/NavigationDrawer'
+
     # Logging
     pod 'CocoaLumberjack/Swift'
     
@@ -27,13 +28,10 @@ target 'Sparclers' do
     
     # Architecture
     pod 'ReactorKit'
-    
+
     # Animation
     pod 'ValueAnimator'
     
-    
-    # UI
-    pod 'SideMenu'
     
     
     # Misc.
