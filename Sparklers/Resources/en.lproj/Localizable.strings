@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Sparklers
+
+  Created by HyunWoo on 18/11/2018.
+  Copyright © 2018 HyunWoo. All rights reserved.
+*/
+
+
+"app_name" = "Sparclers";
+
+"navigation_drawer_open" = "Open navigation drawer";
+"navigation_drawer_close" = "Close navigation drawer";
+"menu_info" = "Information";
+"menu_tuto" = "Tutorial";
+"menu_licenses" = "Licenses";
+
+"tutorial_title" = "Tutorial";
+"tutorial_btn_click_des" = "Please touch this button";
+"tutorial_select_color_des" = "Please select a color";
+"tutorial_color_preview" = "Please check the preview";
+"tutorial_select_complite" = "Please complete your selection";
