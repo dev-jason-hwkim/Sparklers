@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreGraphics
+
 import Firebase
 import SnapKit
+import Material
 
 struct AppDependency {
     
@@ -34,13 +37,19 @@ final class CompositionRoot {
         
         presentSparklerScreen = {
             let reactor = SparklerViewReactor(colorCellReactorFactory: SparklerColorCellReactor.init)
-            let navigtaionController = UINavigationController(rootViewController: SparklerViewController(reactor: reactor))
-            window.rootViewController = navigtaionController
+            let sparklerViewController = SparklerViewController(reactor: reactor)
+            let navigtaionController = UINavigationController(rootViewController: sparklerViewController)
+            let rightViewController = RightViewController()
+            rightViewController.delegate = sparklerViewController
+            window.rootViewController = NavigationDrawerController(rootViewController: navigtaionController, rightViewController: rightViewController)
         }
         
         let reactor = SplashViewReactor()
         let splashViewController = SplashViewController(reactor: reactor, presentSparklerScreen: presentSparklerScreen)
         window.rootViewController = splashViewController
+        
+        
+        
         
         
         return AppDependency(window: window,

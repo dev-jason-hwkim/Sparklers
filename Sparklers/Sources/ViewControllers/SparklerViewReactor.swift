@@ -28,9 +28,7 @@ final class SparklerViewReactor: Reactor {
         case setIsShowMenu(Bool)
         case setColorList([Color])
         case setColorFilter(UIColor)
-        
-        
-        
+     
     }
     
     struct State {
@@ -38,7 +36,6 @@ final class SparklerViewReactor: Reactor {
         var color: UIColor = .white
         var sections: [SparklerColorCollectionViewSection] = [.setItems([])]
         var isShowMenu: Bool = false
-        
     }
     
     let initialState = State()
@@ -56,8 +53,6 @@ final class SparklerViewReactor: Reactor {
     init(
         colorCellReactorFactory: @escaping (Color) -> SparklerColorCellReactor
         ) {
-        
-        
         self.colorCellReactorFactory = colorCellReactorFactory
     }
     

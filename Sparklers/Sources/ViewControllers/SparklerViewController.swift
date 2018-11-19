@@ -18,7 +18,6 @@ import ReusableKit
 
 import GoogleMobileAds
 
-import MaterialComponents.MaterialNavigationDrawer
 
 
 
@@ -30,11 +29,11 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
     private struct Metric {
         
         
-        static let paletteLeft: CGFloat = 10.0
         
         static let topButtonWidth: CGFloat = 44.0
-        static let buttonWidth: CGFloat = 35.0
-        
+        static let openMenuWidth: CGFloat = 35.0
+        static let paletteLeft: CGFloat = 10.0
+
         static let lineHeight: CGFloat = 15.0
         static let colorListHeight: CGFloat = 60.0
         static let colorListItemSize: CGFloat = 44.0
@@ -76,7 +75,11 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         $0.backgroundColor = .clear
     }
     
-    private let paletteView = ColorPaletteView().then {
+    private let colorView = UIView().then {
+        $0.backgroundColor = .clear
+    }
+    
+    private let colorPaletteView = ColorPaletteView().then {
         $0.layer.cornerRadius = Metric.colorListItemSize / 2.0
         $0.clipsToBounds = true
     }
@@ -86,11 +89,12 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
     }
     
     
-    private let colorList = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+    private let colorListView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.backgroundColor = .clear
         $0.showsVerticalScrollIndicator = false
         $0.showsHorizontalScrollIndicator = false
         $0.bounces = false
+        $0.alpha = 0.0
         
         let layout  = $0.collectionViewLayout as! UICollectionViewFlowLayout
         layout.scrollDirection = .horizontal
@@ -161,21 +165,18 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
     override func addViews() {
         super.addViews()
       
-        
-        
-        
-        
         self.view.addSubview(self.openMenuBtn)
         self.view.addSubview(self.contentView)
-        
         
         self.contentView.addSubview(self.backBtn)
         self.contentView.addSubview(self.infoBtn)
         
         self.contentView.addSubview(self.imgView)
-        self.contentView.addSubview(self.paletteView)
-        self.contentView.addSubview(self.lineView)
-        self.contentView.addSubview(self.colorList)
+        
+        self.contentView.addSubview(self.colorView)
+        self.colorView.addSubview(self.colorPaletteView)
+        self.colorView.addSubview(self.lineView)
+        self.colorView.addSubview(self.colorListView)
         self.contentView.addSubview(self.bannerView)
         
         
@@ -187,7 +188,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         
         self.openMenuBtn.snp.makeConstraints { (make) in
             make.bottom.equalTo(-safeAreaInsets.bottom)
-            make.width.equalTo(Metric.buttonWidth)
+            make.width.equalTo(Metric.openMenuWidth)
             make.height.equalTo(self.openMenuBtn.snp.width)
             make.centerX.equalToSuperview()
         }
@@ -221,26 +222,33 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
             }
         }
         
-        self.paletteView.snp.makeConstraints { (make) in
+        self.colorView.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalTo(self.bannerView.snp.top)
+            make.height.equalTo(Metric.colorListHeight)
+        }
+        
+        self.colorPaletteView.snp.makeConstraints { (make) in
             make.left.equalTo(Metric.paletteLeft)
-            make.bottom.equalTo(self.bannerView.snp.top).offset(-(Metric.colorListHeight - Metric.colorListItemSize) / 2.0)
+            make.bottom.equalTo(-(Metric.colorListHeight - Metric.colorListItemSize) / 2.0)
             make.width.equalTo(Metric.colorListItemSize)
             make.height.equalTo(Metric.colorListItemSize)
         }
         
         self.lineView.snp.makeConstraints { (make) in
-            make.left.equalTo(self.paletteView.snp.right).offset(Metric.colorListItemSpacing)
-            make.centerY.equalTo(self.paletteView.snp.centerY)
+            make.left.equalTo(self.colorPaletteView.snp.right).offset(Metric.colorListItemSpacing)
+            make.centerY.equalTo(self.colorPaletteView.snp.centerY)
             make.width.equalTo(1.0)
             make.height.equalTo(Metric.lineHeight)
         }
         
         
-        self.colorList.snp.makeConstraints { (make) in
+        self.colorListView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
             make.left.equalTo(self.lineView.snp.right)
             make.right.equalToSuperview()
-            make.bottom.equalTo(self.bannerView.snp.top)
-            make.height.equalTo(Metric.colorListHeight)
+            make.bottom.equalToSuperview()
         }
         
         self.bannerView.snp.makeConstraints { (make) in
@@ -253,7 +261,8 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
     
 
     func bind(reactor: SparklerViewReactor) {
-        self.rx.viewDidLoad
+        self.rx
+            .viewDidLoad
             .map { Reactor.Action.loadColors }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
@@ -266,12 +275,12 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
             .disposed(by: self.disposeBag)
 
         
-        
         self.infoBtn.rx
             .tap
-            .subscribe(onNext: { (_) in
-  
-                logger.verbose(self.backBtn.frame)
+            .subscribe(onNext: { [weak self] (_) in
+                guard let`self` = self else { return }
+                self.navigationDrawerController?.toggleRightView()
+
             })
             .disposed(by: self.disposeBag)
         
@@ -285,7 +294,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
 
         
         
-        self.paletteView.rx
+        self.colorPaletteView.rx
             .tapGesture()
             .when(.ended)
             .subscribe(onNext: { [weak self] (_) in
@@ -297,7 +306,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
             })
             .disposed(by: self.disposeBag)
         
-        self.colorList.rx.itemSelected(dataSource: self.dataSource)
+        self.colorListView.rx.itemSelected(dataSource: self.dataSource)
             .map { (item) -> UIColor in
                 switch item {
                 case .setItem(let reactor):
@@ -310,7 +319,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         
         
         
-        self.colorList.rx.setDelegate(self).disposed(by: self.disposeBag)
+        self.colorListView.rx.setDelegate(self).disposed(by: self.disposeBag)
         
         
         reactor.state
@@ -360,7 +369,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         
         reactor.state
             .map { $0.sections }
-            .bind(to: self.colorList.rx.items(dataSource: self.dataSource))
+            .bind(to: self.colorListView.rx.items(dataSource: self.dataSource))
             .disposed(by: self.disposeBag)
         
         
@@ -378,7 +387,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
     }
     
     private func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: GoogleAdMobInfo.AdUnitId.selectColorPage.rawValue)
+        let interstitial = GADInterstitial(adUnitID: GoogleAdMobInfo.AdUnitId.colorPicker.rawValue)
         interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial
@@ -386,15 +395,22 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
     
     private func showMenu() {
         self.contentView.isHidden = false
+        self.colorListView.alpha = 0.0
         self.contentView.alpha = 0.0
-        UIView.animate(withDuration: 0.3, animations: {
+        self.colorPaletteView.alpha = 0
+        self.lineView.alpha = 0
+
+
+        UIView.animate(withDuration: 0.25, animations: {
             self.contentView.alpha = 1.0
-        }) { (_) in
+        }) { [weak self](_) in
+            guard let `self` = self else { return }
             self.setNeedsStatusBarAppearanceUpdate()
-
+            self.showColorSelectAnimation()
         }
-
-        logger.verbose("showMenu")
+   
+  
+      
     }
     
     private func hideMenu() {
@@ -410,6 +426,43 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
 
     }
     
+    private func showColorSelectAnimation() {
+        self.colorListView.alpha = 1.0
+
+        let indexs = self.colorListView.indexPathsForVisibleItems.map { $0.item }.sorted()
+        let start = indexs.first ?? 0
+        let end = indexs.last ?? 0
+        
+        
+        self.colorPaletteView.transform = CGAffineTransform(translationX: 0, y: Metric.colorListHeight)
+        self.colorPaletteView.layer.removeAllAnimations()
+        UIView.animate(withDuration: 0.05,
+                       delay: 0.0,
+                       options: [],
+                       animations: {
+                        self.lineView.alpha = 1
+                        self.colorPaletteView.alpha = 1
+                        self.colorPaletteView.transform = CGAffineTransform(translationX: 0, y: 0)
+                        
+        })
+        
+        
+        for index in start..<end + 1 {
+            let cell = self.colorListView.cellForItem(at: IndexPath(item: index, section: 0))
+            cell?.transform = CGAffineTransform(translationX: 0, y: Metric.colorListHeight)
+            cell?.alpha = 0
+            cell?.layer.removeAllAnimations()
+            UIView.animate(withDuration: 0.05,
+                           delay: TimeInterval(index - start + 1) * 0.02,
+                           options: [],
+                           animations: {
+                            cell?.alpha = 1
+                            cell?.transform = CGAffineTransform(translationX: 0, y: 0)
+                            
+            })
+            
+        }
+    }
     
 }
 extension SparklerViewController: UICollectionViewDelegateFlowLayout {
@@ -488,6 +541,8 @@ extension SparklerViewController: GADInterstitialDelegate {
     /// Tells the delegate the interstitial had been animated off the screen.
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         logger.verbose("interstitialDidDismissScreen")
+        interstitial = createAndLoadInterstitial()
+
     }
     
     /// Tells the delegate that a user click will open another app
@@ -499,6 +554,17 @@ extension SparklerViewController: GADInterstitialDelegate {
 }
 
 
-extension SparklerViewController : UIViewControllerTransitioningDelegate {
+extension SparklerViewController : RightViewProtocol {
+    func infoTouched() {
+        self.navigationController?.pushViewController(InfoViewController(), animated: true)
+    }
     
+    func tutorialTouched() {
+        let reactor = TutorialViewReactor(colorCellReactorFactory: SparklerColorCellReactor.init)
+        self.navigationController?.pushViewController(TutorialViewController(reactor: reactor), animated: true)
+    }
+    
+    func licensesTouched() {
+        
+    }
 }
