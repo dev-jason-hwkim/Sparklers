@@ -34,15 +34,25 @@
 		2CB17083214F412F007B65CF /* StubAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A0213CBB81005FD69C /* StubAppDelegate.swift */; };
 		2CB17084214F4133007B65CF /* TestMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A3213CBB81005FD69C /* TestMain.swift */; };
 		2CB17087214F4324007B65CF /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB17086214F4324007B65CF /* ColorPaletteView.swift */; };
+		2CC0D45421A38E230078F61E /* ColorPickerAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0D45321A38E230078F61E /* ColorPickerAlertView.swift */; };
+		2CC0D45621A38E950078F61E /* ColorPickerAlertViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0D45521A38E950078F61E /* ColorPickerAlertViewReactor.swift */; };
+		2CC0D45821A396060078F61E /* ColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0D45721A396060078F61E /* ColorPickerCell.swift */; };
+		2CC0D45A21A396E60078F61E /* ColorPickerCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0D45921A396E60078F61E /* ColorPickerCellReactor.swift */; };
 		2CE47791213CB6F2005FD69C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4778F213CB6F2005FD69C /* GoogleService-Info.plist */; };
 		2CE47794213CB785005FD69C /* SparklerViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE47793213CB785005FD69C /* SparklerViewReactor.swift */; };
 		2CE47796213CB790005FD69C /* SparklerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE47795213CB790005FD69C /* SparklerViewController.swift */; };
 		2CE47798213CB98F005FD69C /* SparklerColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE47797213CB98F005FD69C /* SparklerColorCell.swift */; };
 		2CE4779A213CB9FC005FD69C /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE47799213CB9FC005FD69C /* BaseCollectionViewCell.swift */; };
 		2CE4779C213CBA3C005FD69C /* SparklerColorCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4779B213CBA3C005FD69C /* SparklerColorCellReactor.swift */; };
-		2CE477AD213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477AC213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift */; };
+		2CE477AD213CBC2D005FD69C /* SparklerColorCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477AC213CBC2D005FD69C /* SparklerColorCollectionViewSection.swift */; };
 		2CE477AE213CBDAA005FD69C /* TestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A2213CBB81005FD69C /* TestConfiguration.swift */; };
 		2CE477B1213D3601005FD69C /* UICollectionView-Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477B0213D3601005FD69C /* UICollectionView-Rx.swift */; };
+		2CF6329E21A3D7DF006E713D /* ColorPickerCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6329D21A3D7DF006E713D /* ColorPickerCollectionViewSection.swift */; };
+		2CF632A221A4032C006E713D /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF632A121A4032C006E713D /* Snap.swift */; };
+		2CF632A421A409A9006E713D /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF632A321A409A9006E713D /* ColorWheel.swift */; };
+		2CF632A621A409DD006E713D /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF632A521A409DD006E713D /* ColorUtils.swift */; };
+		2CF632A821A40A1E006E713D /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF632A721A40A1E006E713D /* BrightnessView.swift */; };
+		2CF632AA21A40A4D006E713D /* HSVColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF632A921A40A4D006E713D /* HSVColorView.swift */; };
 		2CFD7F7921A2D3F30015D95A /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFD7F7821A2D3F30015D95A /* RightViewController.swift */; };
 		DD163CDA7BC7EF3D49B05006 /* Pods_Sparklers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61C29BB32970DC8BDEDAC06F /* Pods_Sparklers.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +97,10 @@
 		2CB1707E214F3594007B65CF /* UIImage-Tint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage-Tint.swift"; sourceTree = "<group>"; };
 		2CB17080214F3623007B65CF /* RainbowLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowLabel.swift; sourceTree = "<group>"; };
 		2CB17086214F4324007B65CF /* ColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
+		2CC0D45321A38E230078F61E /* ColorPickerAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerAlertView.swift; sourceTree = "<group>"; };
+		2CC0D45521A38E950078F61E /* ColorPickerAlertViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerAlertViewReactor.swift; sourceTree = "<group>"; };
+		2CC0D45721A396060078F61E /* ColorPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerCell.swift; sourceTree = "<group>"; };
+		2CC0D45921A396E60078F61E /* ColorPickerCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerCellReactor.swift; sourceTree = "<group>"; };
 		2CE4778F213CB6F2005FD69C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CE47790213CB6F2005FD69C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CE47793213CB785005FD69C /* SparklerViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparklerViewReactor.swift; sourceTree = "<group>"; };
@@ -99,8 +113,14 @@
 		2CE477A2213CBB81005FD69C /* TestConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestConfiguration.swift; sourceTree = "<group>"; };
 		2CE477A3213CBB81005FD69C /* TestMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMain.swift; sourceTree = "<group>"; };
 		2CE477A4213CBB81005FD69C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CE477AC213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparclerColorCollectionViewSection.swift; sourceTree = "<group>"; };
+		2CE477AC213CBC2D005FD69C /* SparklerColorCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparklerColorCollectionViewSection.swift; sourceTree = "<group>"; };
 		2CE477B0213D3601005FD69C /* UICollectionView-Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView-Rx.swift"; sourceTree = "<group>"; };
+		2CF6329D21A3D7DF006E713D /* ColorPickerCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerCollectionViewSection.swift; sourceTree = "<group>"; };
+		2CF632A121A4032C006E713D /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
+		2CF632A321A409A9006E713D /* ColorWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWheel.swift; sourceTree = "<group>"; };
+		2CF632A521A409DD006E713D /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		2CF632A721A40A1E006E713D /* BrightnessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessView.swift; sourceTree = "<group>"; };
+		2CF632A921A40A4D006E713D /* HSVColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSVColorView.swift; sourceTree = "<group>"; };
 		2CFD7F7821A2D3F30015D95A /* RightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 		33B2D9FE3E8DD1A6C238346C /* Pods-Sparklers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparklers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sparklers/Pods-Sparklers.debug.xcconfig"; sourceTree = "<group>"; };
 		391AD9EA7D3368DB330B1CF8 /* Pods_SparclersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SparclersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +202,13 @@
 				2CE47797213CB98F005FD69C /* SparklerColorCell.swift */,
 				2CE4779B213CBA3C005FD69C /* SparklerColorCellReactor.swift */,
 				2CB17086214F4324007B65CF /* ColorPaletteView.swift */,
+				2CC0D45321A38E230078F61E /* ColorPickerAlertView.swift */,
+				2CC0D45521A38E950078F61E /* ColorPickerAlertViewReactor.swift */,
+				2CC0D45721A396060078F61E /* ColorPickerCell.swift */,
+				2CC0D45921A396E60078F61E /* ColorPickerCellReactor.swift */,
+				2CF632A921A40A4D006E713D /* HSVColorView.swift */,
+				2CF632A321A409A9006E713D /* ColorWheel.swift */,
+				2CF632A721A40A1E006E713D /* BrightnessView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +220,8 @@
 				2CB1707E214F3594007B65CF /* UIImage-Tint.swift */,
 				2C6A216B213BE9C3006C5450 /* UIColor-Rgb.swift */,
 				2C6A216D213BEC61006C5450 /* Constants.swift */,
+				2CF632A121A4032C006E713D /* Snap.swift */,
+				2CF632A521A409DD006E713D /* ColorUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -297,7 +326,8 @@
 		2CE477AB213CBBF2005FD69C /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				2CE477AC213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift */,
+				2CE477AC213CBC2D005FD69C /* SparklerColorCollectionViewSection.swift */,
+				2CF6329D21A3D7DF006E713D /* ColorPickerCollectionViewSection.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -525,9 +555,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC0D45621A38E950078F61E /* ColorPickerAlertViewReactor.swift in Sources */,
+				2CF632A821A40A1E006E713D /* BrightnessView.swift in Sources */,
+				2CC0D45421A38E230078F61E /* ColorPickerAlertView.swift in Sources */,
 				2CE47794213CB785005FD69C /* SparklerViewReactor.swift in Sources */,
 				2CFD7F7921A2D3F30015D95A /* RightViewController.swift in Sources */,
-				2CE477AD213CBC2D005FD69C /* SparclerColorCollectionViewSection.swift in Sources */,
+				2CF632A421A409A9006E713D /* ColorWheel.swift in Sources */,
+				2CC0D45A21A396E60078F61E /* ColorPickerCellReactor.swift in Sources */,
+				2CE477AD213CBC2D005FD69C /* SparklerColorCollectionViewSection.swift in Sources */,
 				2C6DB5B7210EA04600BC7057 /* Logger.swift in Sources */,
 				2CE47796213CB790005FD69C /* SparklerViewController.swift in Sources */,
 				2C6A216C213BE9C3006C5450 /* UIColor-Rgb.swift in Sources */,
@@ -538,13 +573,17 @@
 				2C6DB5B0210E9C7400BC7057 /* CompositionRoot.swift in Sources */,
 				2C6A216E213BEC61006C5450 /* Constants.swift in Sources */,
 				2CB17087214F4324007B65CF /* ColorPaletteView.swift in Sources */,
+				2CF6329E21A3D7DF006E713D /* ColorPickerCollectionViewSection.swift in Sources */,
 				2C6DB5B4210E9F8900BC7057 /* BaseViewController.swift in Sources */,
 				2C6CB88221A1C67B00084F88 /* InfoViewController.swift in Sources */,
+				2CC0D45821A396060078F61E /* ColorPickerCell.swift in Sources */,
 				2C613445210E9586008AE829 /* AppDelegate.swift in Sources */,
+				2CF632A221A4032C006E713D /* Snap.swift in Sources */,
 				2C6DB5AE210E9B7200BC7057 /* main.swift in Sources */,
 				2C6CB87F21A19BA400084F88 /* TutorialViewReactor.swift in Sources */,
 				2CE4779A213CB9FC005FD69C /* BaseCollectionViewCell.swift in Sources */,
 				2C6A214F213BC7F0006C5450 /* Color.swift in Sources */,
+				2CF632A621A409DD006E713D /* ColorUtils.swift in Sources */,
 				2CB17081214F3623007B65CF /* RainbowLabel.swift in Sources */,
 				2CE47798213CB98F005FD69C /* SparklerColorCell.swift in Sources */,
 				2C6A215F213BD74C006C5450 /* UIView-Debug.swift in Sources */,
@@ -552,6 +591,7 @@
 				2CB1707F214F3594007B65CF /* UIImage-Tint.swift in Sources */,
 				2C6A2169213BE425006C5450 /* SquareLineView.swift in Sources */,
 				2C6A2151213BC86D006C5450 /* ColorPackage.swift in Sources */,
+				2CF632AA21A40A4D006E713D /* HSVColorView.swift in Sources */,
 				2C6A2157213BD351006C5450 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

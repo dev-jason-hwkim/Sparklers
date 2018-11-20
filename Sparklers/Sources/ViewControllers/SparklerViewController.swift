@@ -89,7 +89,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
     }
     
     
-    private let colorListView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+    private let colorCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.backgroundColor = .clear
         $0.showsVerticalScrollIndicator = false
         $0.showsHorizontalScrollIndicator = false
@@ -176,7 +176,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         self.contentView.addSubview(self.colorView)
         self.colorView.addSubview(self.colorPaletteView)
         self.colorView.addSubview(self.lineView)
-        self.colorView.addSubview(self.colorListView)
+        self.colorView.addSubview(self.colorCollectionView)
         self.contentView.addSubview(self.bannerView)
         
         
@@ -244,7 +244,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         }
         
         
-        self.colorListView.snp.makeConstraints { (make) in
+        self.colorCollectionView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.left.equalTo(self.lineView.snp.right)
             make.right.equalToSuperview()
@@ -300,13 +300,21 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
             .subscribe(onNext: { [weak self] (_) in
                 guard let `self` = self else { return }
       
-                if self.interstitial.isReady {
-                    self.interstitial.present(fromRootViewController: self)
-                }
+//                if self.interstitial.isReady {
+//                    self.interstitial.present(fromRootViewController: self)
+//                }
+
+                let alert = ColorPickerAlertView(currentColor: reactor.currentState.color)
+                alert.delegate = self
+                self.view.addSubview(alert)
+                alert.snp.makeConstraints({ (make) in
+                    make.edges.equalToSuperview()
+                })
+                
             })
             .disposed(by: self.disposeBag)
         
-        self.colorListView.rx.itemSelected(dataSource: self.dataSource)
+        self.colorCollectionView.rx.itemSelected(dataSource: self.dataSource)
             .map { (item) -> UIColor in
                 switch item {
                 case .setItem(let reactor):
@@ -319,7 +327,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         
         
         
-        self.colorListView.rx.setDelegate(self).disposed(by: self.disposeBag)
+        self.colorCollectionView.rx.setDelegate(self).disposed(by: self.disposeBag)
         
         
         reactor.state
@@ -369,7 +377,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         
         reactor.state
             .map { $0.sections }
-            .bind(to: self.colorListView.rx.items(dataSource: self.dataSource))
+            .bind(to: self.colorCollectionView.rx.items(dataSource: self.dataSource))
             .disposed(by: self.disposeBag)
         
         
@@ -395,7 +403,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
     
     private func showMenu() {
         self.contentView.isHidden = false
-        self.colorListView.alpha = 0.0
+        self.colorCollectionView.alpha = 0.0
         self.contentView.alpha = 0.0
         self.colorPaletteView.alpha = 0
         self.lineView.alpha = 0
@@ -427,9 +435,9 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
     }
     
     private func showColorSelectAnimation() {
-        self.colorListView.alpha = 1.0
+        self.colorCollectionView.alpha = 1.0
 
-        let indexs = self.colorListView.indexPathsForVisibleItems.map { $0.item }.sorted()
+        let indexs = self.colorCollectionView.indexPathsForVisibleItems.map { $0.item }.sorted()
         let start = indexs.first ?? 0
         let end = indexs.last ?? 0
         
@@ -448,7 +456,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         
         
         for index in start..<end + 1 {
-            let cell = self.colorListView.cellForItem(at: IndexPath(item: index, section: 0))
+            let cell = self.colorCollectionView.cellForItem(at: IndexPath(item: index, section: 0))
             cell?.transform = CGAffineTransform(translationX: 0, y: Metric.colorListHeight)
             cell?.alpha = 0
             cell?.layer.removeAllAnimations()
@@ -486,30 +494,23 @@ extension SparklerViewController: GADBannerViewDelegate {
         logger.verbose("adViewDidReceiveAd")
     }
     
-    /// Tells the delegate an ad request failed.
     func adView(_ bannerView: GADBannerView,
                 didFailToReceiveAdWithError error: GADRequestError) {
         logger.verbose("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
-    
-    /// Tells the delegate that a full-screen view will be presented in response
-    /// to the user clicking on an ad.
+
     func adViewWillPresentScreen(_ bannerView: GADBannerView) {
         logger.verbose("adViewWillPresentScreen")
     }
     
-    /// Tells the delegate that the full-screen view will be dismissed.
     func adViewWillDismissScreen(_ bannerView: GADBannerView) {
         logger.verbose("adViewWillDismissScreen")
     }
     
-    /// Tells the delegate that the full-screen view has been dismissed.
     func adViewDidDismissScreen(_ bannerView: GADBannerView) {
         logger.verbose("adViewDidDismissScreen")
     }
     
-    /// Tells the delegate that a user click will open another app (such as
-    /// the App Store), backgrounding the current app.
     func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
         logger.verbose("adViewWillLeaveApplication")
     }
@@ -518,39 +519,12 @@ extension SparklerViewController: GADBannerViewDelegate {
 
 extension SparklerViewController: GADInterstitialDelegate {
 
-    /// Tells the delegate an ad request succeeded.
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        logger.verbose("interstitialDidReceiveAd")
-    }
-    
-    /// Tells the delegate an ad request failed.
-    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
-        logger.verbose("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-    
-    /// Tells the delegate that an interstitial will be presented.
-    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
-        logger.verbose("interstitialWillPresentScreen")
-    }
-    
-    /// Tells the delegate the interstitial is to be animated off the screen.
-    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
-        logger.verbose("interstitialWillDismissScreen")
-    }
-    
-    /// Tells the delegate the interstitial had been animated off the screen.
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         logger.verbose("interstitialDidDismissScreen")
         interstitial = createAndLoadInterstitial()
 
     }
-    
-    /// Tells the delegate that a user click will open another app
-    /// (such as the App Store), backgrounding the current app.
-    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
-        logger.verbose("interstitialWillLeaveApplication")
-    }
-    
+   
 }
 
 
@@ -566,5 +540,11 @@ extension SparklerViewController : RightViewProtocol {
     
     func licensesTouched() {
         
+    }
+}
+
+extension SparklerViewController: ColorPickerAlertViewProtocl {
+    func selectColor(color: Color) {
+        reactor?.action.onNext(.appendColor(color))
     }
 }

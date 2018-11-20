@@ -77,6 +77,7 @@ final class InfoViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setNeedsStatusBarAppearanceUpdate()
         self.view.backgroundColor = Color.background
         
         self.navigationController?.isNavigationBarHidden = true
@@ -142,3 +143,7 @@ final class InfoViewController: BaseViewController {
         }
     }
 }
+
+
+
+

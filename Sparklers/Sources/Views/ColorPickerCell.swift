@@ -1,21 +1,19 @@
 //
-//  SparklerColorCell.swift
+//  ColorPickerCell.swift
 //  Sparklers
 //
-//  Created by HyunWoo on 03/09/2018.
+//  Created by HyunWoo on 20/11/2018.
 //  Copyright © 2018 HyunWoo. All rights reserved.
 //
 
-
-import RxSwift
-import RxCocoa
-import RxOptional
-
+import Foundation
+import UIKit
 import ReactorKit
 
-import ManualLayout
-
-final class SparklerColorCell: BaseCollectionViewCell, View {
+final class ColorPickerCell: BaseCollectionViewCell, View {
+    
+    
+    
     private struct Metric {
         static let colorViewWidth: CGFloat = 44.0
         static let colorViewHeight: CGFloat = 44.0
@@ -23,7 +21,7 @@ final class SparklerColorCell: BaseCollectionViewCell, View {
     }
     
     private struct Color  {
-        static let colorView = UIColor.color(red: 29, green: 34, blue: 83)
+        static let colorView = UIColor.color(red: 65, green: 66, blue: 65)
     }
     
     private struct Font {
@@ -31,23 +29,31 @@ final class SparklerColorCell: BaseCollectionViewCell, View {
     }
     
     private let colorView = UIView().then {
-        $0.backgroundColor = Color.colorView
         $0.layer.cornerRadius = Metric.colorViewWidth/2
-
-        
+        $0.layer.borderWidth = 1.5
+        $0.layer.borderColor = UIColor.lightGray.cgColor
     }
     
-    private let name = UILabel().then {
-        $0.backgroundColor = .clear
-        $0.textAlignment = .center
-        $0.font = Font.name
-        
+    private let check = UIImageView().then {
+        $0.image = #imageLiteral(resourceName: "check_white")
+        $0.isHidden = true
+    }
+
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                self.check.isHidden = false
+            } else {
+                self.check.isHidden = true
+            }
+        }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.colorView.addSubview(self.name)
+        self.colorView.addSubview(self.check)
         self.contentView.addSubview(self.colorView)
     }
     
@@ -56,22 +62,18 @@ final class SparklerColorCell: BaseCollectionViewCell, View {
         super.layoutSubviews()
         
         self.colorView.frame = self.contentView.bounds
-        self.name.frame = self.colorView.bounds
-
+        self.check.sizeToFit()
+        self.check.center = self.colorView.center
+        
+        
     }
     
-    func bind(reactor: SparklerColorCellReactor) {
-        reactor.state
-            .map { $0.color.name }
-            .bind(to: self.name.rx.text)
-            .disposed(by: self.disposeBag)
-        
-        
-        reactor.state
-            .map { $0.color.color }
+    func bind(reactor: ColorPickerCellReactor) {
+
+        reactor.state.map { $0.color }
             .subscribe(onNext: { [weak self] (color) in
                 guard let `self` = self else { return }
-                self.name.textColor = color
+                self.colorView.backgroundColor = color
             })
             .disposed(by: self.disposeBag)
         
@@ -79,4 +81,3 @@ final class SparklerColorCell: BaseCollectionViewCell, View {
     }
     
 }
-

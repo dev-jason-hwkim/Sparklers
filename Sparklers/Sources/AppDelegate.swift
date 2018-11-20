@@ -28,7 +28,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate{
         ) -> Bool {
         
         #if DEBUG
-        UIView.Start()
+//        UIView.Start()
         #endif
         self.dependency = self.dependency ?? CompositionRoot.resolve()
         self.dependency.configureSDKs()

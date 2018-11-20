@@ -20,3 +20,6 @@
 "tutorial_select_color_des" = "Please select a color";
 "tutorial_color_preview" = "Please check the preview";
 "tutorial_select_complite" = "Please complete your selection";
+
+"cancel" = "Cancel";
+"select" = "Select";

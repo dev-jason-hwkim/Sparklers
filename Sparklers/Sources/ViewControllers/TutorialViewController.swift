@@ -121,7 +121,7 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
 
     }
     
-    private let colorListView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+    private let colorCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.backgroundColor = .clear
         $0.showsVerticalScrollIndicator = false
         $0.showsHorizontalScrollIndicator = false
@@ -220,7 +220,7 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
         self.view.addSubview(self.colorView)
         self.colorView.addSubview(self.colorPaletteView)
         self.colorView.addSubview(self.lineView)
-        self.colorView.addSubview(self.colorListView)
+        self.colorView.addSubview(self.colorCollectionView)
         
         self.view.addSubview(self.lastTutorial)
         
@@ -305,7 +305,7 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
         }
         
         
-        self.colorListView.snp.makeConstraints { (make) in
+        self.colorCollectionView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.left.equalTo(self.lineView.snp.right)
             make.right.equalToSuperview()
@@ -333,11 +333,11 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
             .disposed(by: self.disposeBag)
         
         
-        self.colorListView.rx.setDelegate(self).disposed(by: self.disposeBag)
+        self.colorCollectionView.rx.setDelegate(self).disposed(by: self.disposeBag)
 
         reactor.state
             .map { $0.sections }
-            .bind(to: self.colorListView.rx.items(dataSource: self.dataSource))
+            .bind(to: self.colorCollectionView.rx.items(dataSource: self.dataSource))
             .disposed(by: self.disposeBag)
         
         reactor.state
@@ -402,14 +402,14 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
         })
 
 
-        self.colorListView.layoutIfNeeded()
-        logger.verbose(self.colorListView.visibleCells)
-        let indexs = self.colorListView.indexPathsForVisibleItems.map { $0.item }.sorted()
+        self.colorCollectionView.layoutIfNeeded()
+        logger.verbose(self.colorCollectionView.visibleCells)
+        let indexs = self.colorCollectionView.indexPathsForVisibleItems.map { $0.item }.sorted()
         let start = indexs.first ?? 0
         let end = indexs.last ?? 0
         
         for index in start..<end + 1 {
-            let cell = self.colorListView.cellForItem(at: IndexPath(item: index, section: 0))
+            let cell = self.colorCollectionView.cellForItem(at: IndexPath(item: index, section: 0))
             cell?.transform = CGAffineTransform(translationX: 0, y: Metric.colorListHeight)
             cell?.alpha = 0
             cell?.layer.removeAllAnimations()

@@ -21,6 +21,7 @@ final class SparklerViewReactor: Reactor {
         case showMenu
         case hideMenu
         case selectColor(UIColor)
+        case appendColor(Color)
         
     }
     
@@ -68,7 +69,14 @@ final class SparklerViewReactor: Reactor {
             return Observable.just(Mutation.setIsShowMenu(false))
         case .selectColor(let color):
             return Observable.just(Mutation.setColorFilter(color))
-
+        case .appendColor(let color):
+            self.colorList.append(color)
+            return Observable.concat([
+                Observable.just(Mutation.setColorList(self.colorList)),
+                Observable.just(Mutation.setColorFilter(color.color))
+                ])
+            
+            
         }
         
     }
@@ -80,7 +88,7 @@ final class SparklerViewReactor: Reactor {
         case .setIsShowMenu(let isShowMenu):
             state.isShowMenu = isShowMenu
         case .setColorList(let colors):
-            let sectionItmes = self.colorListViewSectionItems(with: colors)
+            let sectionItmes = self.colorCollectionViewSectionItems(with: colors)
             state.sections = [.setItems(sectionItmes)]
             
         case .setColorFilter(let color):
@@ -103,7 +111,7 @@ final class SparklerViewReactor: Reactor {
         ]
     }
     
-    private func colorListViewSectionItems(with filters: [Color]) -> [SparklerColorCollectionViewSectionItem] {
+    private func colorCollectionViewSectionItems(with filters: [Color]) -> [SparklerColorCollectionViewSectionItem] {
         return filters
             .map(self.colorCellReactorFactory)
             .map(SparklerColorCollectionViewSectionItem.setItem)

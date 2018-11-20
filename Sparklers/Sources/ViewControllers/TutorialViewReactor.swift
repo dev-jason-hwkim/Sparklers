@@ -64,7 +64,7 @@ final class TutorialViewReactor: Reactor {
         
         switch mutation {
         case .setColorList(let colors):
-            let sectionItmes = self.colorListViewSectionItems(with: colors)
+            let sectionItmes = self.colorCollectionViewSectionItems(with: colors)
             state.sections = [.setItems(sectionItmes)]
         case .increase:
             state.tutorialIndex += 1
@@ -85,7 +85,7 @@ final class TutorialViewReactor: Reactor {
         ]
     }
     
-    private func colorListViewSectionItems(with filters: [Color]) -> [SparklerColorCollectionViewSectionItem] {
+    private func colorCollectionViewSectionItems(with filters: [Color]) -> [SparklerColorCollectionViewSectionItem] {
         return filters
             .map(self.colorCellReactorFactory)
             .map(SparklerColorCollectionViewSectionItem.setItem)
