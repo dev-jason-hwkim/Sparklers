@@ -18,7 +18,7 @@ import ReusableKit
 
 import GoogleMobileAds
 
-
+import KYDrawerController
 
 
 
@@ -279,7 +279,9 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
             .tap
             .subscribe(onNext: { [weak self] (_) in
                 guard let`self` = self else { return }
-                self.navigationDrawerController?.toggleRightView()
+                if let drawerController = self.navigationController?.parent as? KYDrawerController {
+                    drawerController.setDrawerState(.opened, animated: true)
+                }
 
             })
             .disposed(by: self.disposeBag)
@@ -423,6 +425,8 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
     
     private func hideMenu() {
         self.contentView.alpha = 1.0
+        self.setNeedsStatusBarAppearanceUpdate()
+
         UIView.animate(withDuration: 0.3, animations: {
             self.contentView.alpha = 0.0
         }) { (_) in
@@ -538,7 +542,8 @@ extension SparklerViewController : RightViewProtocol {
     }
     
     func licensesTouched() {
-        
+        self.navigationController?.pushViewController(LicenseViewController(), animated: true)
+
     }
 }
 
