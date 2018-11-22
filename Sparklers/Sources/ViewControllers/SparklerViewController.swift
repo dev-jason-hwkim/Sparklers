@@ -302,9 +302,9 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
             .subscribe(onNext: { [weak self] (_) in
                 guard let `self` = self else { return }
       
-//                if self.interstitial.isReady {
-//                    self.interstitial.present(fromRootViewController: self)
-//                }
+                if self.interstitial.isReady {
+                    self.interstitial.present(fromRootViewController: self)
+                }
 
                 let alert = ColorPickerAlertView(currentColor: reactor.currentState.color)
                 alert.delegate = self

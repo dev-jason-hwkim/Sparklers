@@ -17,8 +17,12 @@ struct GoogleAdMobInfo {
         case selectColorPage = "ca-app-pub-3940256099942544/2934735716"
         case colorPicker = "ca-app-pub-3940256099942544/4411468910"
         #else
-        case selectColorPage = "ca-app-pub-4718977625494132/6997113180"
+        
+        case selectColorPage = "ca-app-pub-3940256099942544/2934735716"
         case colorPicker = "ca-app-pub-3940256099942544/4411468910"
+        
+//        case selectColorPage = "ca-app-pub-4718977625494132/6997113180"
+//        case colorPicker = "ca-app-pub-3940256099942544/4411468910"
         #endif
     }
 }
