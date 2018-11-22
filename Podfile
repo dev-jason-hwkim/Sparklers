@@ -20,8 +20,8 @@ target 'Sparklers' do
     # UI
     pod 'SnapKit'
     pod 'ManualLayout'
-    pod 'Material'
-    
+
+    pod 'KYDrawerController'
     
     # Logging
     pod 'CocoaLumberjack/Swift'

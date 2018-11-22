@@ -11,7 +11,8 @@ import CoreGraphics
 
 import Firebase
 import SnapKit
-import Material
+
+import KYDrawerController
 
 struct AppDependency {
     
@@ -41,7 +42,13 @@ final class CompositionRoot {
             let navigtaionController = UINavigationController(rootViewController: sparklerViewController)
             let rightViewController = RightViewController()
             rightViewController.delegate = sparklerViewController
-            window.rootViewController = NavigationDrawerController(rootViewController: navigtaionController, rightViewController: rightViewController)
+            
+            
+            let drawerController = KYDrawerController(drawerDirection: .right, drawerWidth: SCREEN_SIZE.width / 2.0)
+            drawerController.mainViewController = navigtaionController
+            drawerController.drawerViewController = rightViewController
+            drawerController.screenEdgePanGesture.isEnabled = false
+            window.rootViewController = drawerController
         }
         
         let reactor = SplashViewReactor()

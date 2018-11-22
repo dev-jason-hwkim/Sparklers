@@ -65,7 +65,6 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     private let presentSparklerScreen: () -> Void
     
     override var prefersStatusBarHidden: Bool {
-        logger.verbose("prefersStatusBarHidden")
         return true
     }
     

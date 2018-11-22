@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0D8FFC21A6BFAD001F737E /* KYDrawerController-StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D8FFB21A6BFAD001F737E /* KYDrawerController-StatusBar.swift */; };
+		2C23616321A6AE9C00BED795 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C23616221A6AE9C00BED795 /* LicenseViewController.swift */; };
+		2C23616521A6B3EA00BED795 /* OpenSource.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2C23616421A6B3EA00BED795 /* OpenSource.rtf */; };
 		2C613445210E9586008AE829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C613444210E9586008AE829 /* AppDelegate.swift */; };
 		2C61344C210E9586008AE829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C61344B210E9586008AE829 /* Assets.xcassets */; };
 		2C61344F210E9586008AE829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C61344D210E9586008AE829 /* LaunchScreen.storyboard */; };
@@ -71,6 +74,9 @@
 		0C4D3572262B384BEDB0EC00 /* Pods-Sparklers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparklers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sparklers/Pods-Sparklers.release.xcconfig"; sourceTree = "<group>"; };
 		1CD6000F7707C6681BA16986 /* Pods-Sparclers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparclers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sparclers/Pods-Sparclers.debug.xcconfig"; sourceTree = "<group>"; };
 		2630A163F1E6B185305AD9B6 /* Pods-SparclersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparclersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SparclersTests/Pods-SparclersTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C0D8FFB21A6BFAD001F737E /* KYDrawerController-StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KYDrawerController-StatusBar.swift"; sourceTree = "<group>"; };
+		2C23616221A6AE9C00BED795 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		2C23616421A6B3EA00BED795 /* OpenSource.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = OpenSource.rtf; sourceTree = "<group>"; };
 		2C613441210E9586008AE829 /* Sparklers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sparklers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C613444210E9586008AE829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C61344B210E9586008AE829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				2C613443210E9586008AE829 /* Sparklers */,
-				2CE4779D213CBB81005FD69C /* SparclersTests */,
+				2CE4779D213CBB81005FD69C /* SparklersTests */,
 				2C613442210E9586008AE829 /* Products */,
 				5A516FEDB4BC655C8A51FC9B /* Pods */,
 				A1F8B75F140DC358F717A37F /* Frameworks */,
@@ -222,6 +228,7 @@
 				2C6A216D213BEC61006C5450 /* Constants.swift */,
 				2CF632A121A4032C006E713D /* Snap.swift */,
 				2CF632A521A409DD006E713D /* ColorUtils.swift */,
+				2C0D8FFB21A6BFAD001F737E /* KYDrawerController-StatusBar.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -262,6 +269,7 @@
 		2CDE34AD210E965A001E7064 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C23616421A6B3EA00BED795 /* OpenSource.rtf */,
 				2C6A2165213BDB1A006C5450 /* raw */,
 				2C61344B210E9586008AE829 /* Assets.xcassets */,
 				2C61344D210E9586008AE829 /* LaunchScreen.storyboard */,
@@ -282,6 +290,7 @@
 				2C6CB87E21A19BA400084F88 /* TutorialViewReactor.swift */,
 				2C6CB88121A1C67B00084F88 /* InfoViewController.swift */,
 				2CFD7F7821A2D3F30015D95A /* RightViewController.swift */,
+				2C23616221A6AE9C00BED795 /* LicenseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -295,13 +304,13 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2CE4779D213CBB81005FD69C /* SparclersTests */ = {
+		2CE4779D213CBB81005FD69C /* SparklersTests */ = {
 			isa = PBXGroup;
 			children = (
 				2CE4779E213CBB81005FD69C /* Sources */,
 				2CE477A4213CBB81005FD69C /* Info.plist */,
 			);
-			path = SparclersTests;
+			path = SparklersTests;
 			sourceTree = "<group>";
 		};
 		2CE4779E213CBB81005FD69C /* Sources */ = {
@@ -455,6 +464,7 @@
 				2CE47791213CB6F2005FD69C /* GoogleService-Info.plist in Resources */,
 				2C61344C210E9586008AE829 /* Assets.xcassets in Resources */,
 				2C6A2167213BDB33006C5450 /* sparkler.mp4 in Resources */,
+				2C23616521A6B3EA00BED795 /* OpenSource.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,9 +509,8 @@
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/ManualLayout/ManualLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
-				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ReusableKit/ReusableKit.framework",
@@ -525,9 +534,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ManualLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReusableKit.framework",
@@ -562,6 +570,8 @@
 				2CFD7F7921A2D3F30015D95A /* RightViewController.swift in Sources */,
 				2CF632A421A409A9006E713D /* ColorWheel.swift in Sources */,
 				2CC0D45A21A396E60078F61E /* ColorPickerCellReactor.swift in Sources */,
+				2C23616321A6AE9C00BED795 /* LicenseViewController.swift in Sources */,
+				2C0D8FFC21A6BFAD001F737E /* KYDrawerController-StatusBar.swift in Sources */,
 				2CE477AD213CBC2D005FD69C /* SparklerColorCollectionViewSection.swift in Sources */,
 				2C6DB5B7210EA04600BC7057 /* Logger.swift in Sources */,
 				2CE47796213CB790005FD69C /* SparklerViewController.swift in Sources */,

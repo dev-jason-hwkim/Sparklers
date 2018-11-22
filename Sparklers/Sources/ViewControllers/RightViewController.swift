@@ -9,7 +9,7 @@
 import Foundation
 
 import UIKit
-import Material
+import KYDrawerController
 
 
 protocol RightViewProtocol: class {
@@ -27,16 +27,24 @@ final class RightViewController: BaseViewController {
     
     private struct Color {
         static let background = UIColor.color(red: 29, green: 34, blue: 83)
+        
     }
     
     
+    private let info = UIButton().then {
+        $0.setTitle(NSLocalizedString("menu_info", comment: "Information"), for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+    }
     
-    private let info = FlatButton(title: NSLocalizedString("menu_info", comment: "Information"), titleColor: .white)
-    private let tutorial = FlatButton(title: NSLocalizedString("menu_tuto", comment: "Tutorial"), titleColor: .white)
-    private let licenses = FlatButton(title: NSLocalizedString("menu_licenses", comment: "Licenses"), titleColor: .white)
+    private let tutorial = UIButton().then {
+        $0.setTitle(NSLocalizedString("menu_tuto", comment: "Tutorial"), for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+    }
     
-    
-    
+    private let licenses = UIButton().then {
+        $0.setTitle(NSLocalizedString("menu_licenses", comment: "Licenses"), for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+    }
 
     weak var delegate: RightViewProtocol?
 
@@ -121,8 +129,9 @@ final class RightViewController: BaseViewController {
 
 extension RightViewController {
     private func closeNavigationDrawer(completion: (() -> Void)? = nil) {
-        navigationDrawerController?.closeRightView()
-        
+        if let drawerController = parent as? KYDrawerController {
+            drawerController.setDrawerState(.closed, animated: true)
+        }
      
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250)) {
             if let completion = completion {

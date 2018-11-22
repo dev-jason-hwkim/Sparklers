@@ -427,7 +427,6 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
             self.contentView.alpha = 0.0
         }) { (_) in
             self.contentView.isHidden = true
-            self.setNeedsStatusBarAppearanceUpdate()
         }
         logger.verbose("hideMenu")
 
