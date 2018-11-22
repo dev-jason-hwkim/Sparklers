@@ -72,8 +72,9 @@ final class ColorPickerAlertViewReactor: Reactor  {
             let color = self.mainColorList[index]
             
             return Observable.concat([
+                Observable.just(Mutation.setShadeColorIndex(-1)),
                 Observable.just(Mutation.setMainColorIndex(index)),
-
+                Observable.just(Mutation.setShadeColorList(self.getColorShadeList(color: color)))
                 ])
         case .selectShadeColor(let index):
             return Observable.just(Mutation.setShadeColorIndex(index))
@@ -101,8 +102,15 @@ final class ColorPickerAlertViewReactor: Reactor  {
             state.shadeColorSection = [.setItems(sectionItmes)]
         case .setMainColorIndex(let index):
             state.mainColorIndex = index
+            let mainColor = self.mainColorList[index]
+            state.currentColor = Color(color: mainColor, name: "C")
         case .setShadeColorIndex(let index):
             state.shadeColorIndex = index
+            if state .shadeColorIndex >= 0 {
+                let mainColor = self.mainColorList[state.mainColorIndex]
+                let color = self.getColorShadeList(color: mainColor)[index]
+                state.currentColor = Color(color: color, name: "C")
+            }
         case .setIsShowCollection(let isShowCollection):
             state.isShowCollection = isShowCollection
         }

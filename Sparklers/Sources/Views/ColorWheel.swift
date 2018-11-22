@@ -178,7 +178,7 @@ class ColorWheel: UIView {
                     hsv.saturation = saturation
                     hsv.brightness = 1.0
                     hsv.alpha = a
-                    rgb = hsv2rgb(hsv)
+                    rgb = ColorUtils.hsv2rgb(hsv)
                 }
                 let offset = Int(4 * (x + y * dimension))
                 bitmap?[offset] = UInt8(rgb.red*255)
@@ -240,7 +240,6 @@ class ColorWheel: UIView {
         self.brightness = brightness
         brightnessLayer.fillColor = UIColor(white: 0, alpha: 1.0-self.brightness).cgColor
         point = pointAtHueSaturation(hue, saturation: saturation)
-        logger.verbose(point)
         drawIndicator()
     }
     

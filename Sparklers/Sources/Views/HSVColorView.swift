@@ -72,9 +72,9 @@ final class HSVColorView:  UIView {
         self.saturation = saturation
         self.brightness = brightness
         self.color = color
-        colorWheel.setViewColor(self.color)
-        brightnessView.setViewColor(self.color)
-
+        self.colorWheel.setViewColor(color)
+        
+        self.brightnessView.setViewColor(color)
     }
     
     func getColor() -> UIColor {

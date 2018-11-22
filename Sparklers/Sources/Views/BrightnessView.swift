@@ -63,7 +63,6 @@ final class BrightnessView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         colorLayer.frame = CGRect(x: 2, y: 0, width: 24, height: self.frame.size.height)
-        drawIndicator()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -119,7 +118,8 @@ final class BrightnessView: UIView {
             print("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
         
-        return CGPoint(x: brightness * frame.height, y: frame.width / 2)
+        logger.verbose(self.frame.size)
+        return CGPoint(x: frame.width/2.0, y: brightness * frame.height)
     }
     
     func setViewColor(_ color: UIColor!) {
@@ -133,7 +133,11 @@ final class BrightnessView: UIView {
             UIColor.black.cgColor,
             UIColor(hue: hue, saturation: saturation, brightness: 1, alpha: 1).cgColor
         ]
+        
+
+        self.point = self.getPointFromColor(color)
         drawIndicator()
+
     }
 }
 

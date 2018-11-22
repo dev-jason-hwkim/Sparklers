@@ -74,6 +74,14 @@ final class ColorPickerCell: BaseCollectionViewCell, View {
             .subscribe(onNext: { [weak self] (color) in
                 guard let `self` = self else { return }
                 self.colorView.backgroundColor = color
+                
+                if ColorUtils.calculateLuminance(color: color) >= 0.65 || color.cgColor.alpha <= 0.64 {
+                    self.check.image = #imageLiteral(resourceName: "check_black")
+                } else {
+                    self.check.image = #imageLiteral(resourceName: "check_white")
+                }
+                
+                
             })
             .disposed(by: self.disposeBag)
         

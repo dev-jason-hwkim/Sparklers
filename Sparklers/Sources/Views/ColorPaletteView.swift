@@ -17,13 +17,11 @@ final class ColorPaletteView: UIView {
     }
 
     
-    private let background = UIColor.color(red: 42, green: 42, blue: 42)
+    private let background = UIColor.color(red: 29, green: 34, blue: 83)
     
     
     
     override func draw(_ rect: CGRect) {
-
-
 
         let arcStep = 2 * CGFloat.pi / 360
         let x = rect.width / 2

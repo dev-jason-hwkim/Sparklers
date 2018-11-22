@@ -33,10 +33,11 @@ final class ColorPickerAlertView: UIView, View {
         static let mainColorCollectionLineSpacing: CGFloat = 10.0
 
         static let mainColorCollectionSectioninset = UIEdgeInsetsMake(10, 10, 10, 10)
-        static let colorShadeCollectionSectioninset = UIEdgeInsetsMake(0, 10, 0, 10)
+        static let colorShadeCollectionSectioninset = UIEdgeInsetsMake(10, 10, 10, 10)
 
-        static let shadeColorCollectionViewHeight:CGFloat = 60
-        
+        static let shadeColorCollectionViewHeight:CGFloat = 64
+
+        static let buttonTop: CGFloat = 10.0
         static let buttonHeight: CGFloat = 44.0
         
         static let colorViewLeftRight: CGFloat = 25.0
@@ -135,6 +136,10 @@ final class ColorPickerAlertView: UIView, View {
     }
     )
     
+    private let lineView = UIView().then {
+        $0.backgroundColor = UIColor.lightGray
+    }
+    
     
     private let hsvColorView = HSVColorView()
     
@@ -187,6 +192,7 @@ final class ColorPickerAlertView: UIView, View {
         self.alert.addSubview(self.title)
         self.alert.addSubview(self.segmentControl)
         self.alert.addSubview(self.mainColorCollectionView)
+        self.alert.addSubview(self.lineView)
         self.alert.addSubview(self.colorShadeCollectionView)
         self.alert.addSubview(self.hsvColorView)
 
@@ -227,7 +233,12 @@ final class ColorPickerAlertView: UIView, View {
             + Metric.mainColorCollectionSectioninset.bottom
 
 
-        self.colorShadeCollectionView.top = self.mainColorCollectionView.bottom
+        self.lineView.top = self.mainColorCollectionView.bottom
+        self.lineView.left2 = Metric.mainColorCollectionSectioninset.left
+        self.lineView.right2 = self.mainColorCollectionView.width - Metric.mainColorCollectionSectioninset.right
+        self.lineView.height = 1.0
+        
+        self.colorShadeCollectionView.top = self.lineView.bottom
         self.colorShadeCollectionView.left2 = 0
         self.colorShadeCollectionView.right2 = self.alert.width
         self.colorShadeCollectionView.height = Metric.shadeColorCollectionViewHeight
@@ -238,7 +249,7 @@ final class ColorPickerAlertView: UIView, View {
         self.hsvColorView.height = self.mainColorCollectionView.height
         
         
-        self.cancel.top = self.colorShadeCollectionView.bottom
+        self.cancel.top = self.colorShadeCollectionView.bottom + Metric.buttonTop
         self.cancel.left = 0
         self.cancel.width = self.alert.width / 2.0
         self.cancel.height = Metric.buttonHeight
@@ -397,6 +408,7 @@ final class ColorPickerAlertView: UIView, View {
         self.mainColorCollectionView.isHidden = false
         self.colorShadeCollectionView.isHidden = false
         self.hsvColorView.isHidden = true
+        self.lineView.isHidden = false
         self.oldColorView.isHidden = true
         self.arrow.isHidden = true
         self.currentColorView.isHidden = true
@@ -407,6 +419,7 @@ final class ColorPickerAlertView: UIView, View {
         self.mainColorCollectionView.isHidden = true
         self.colorShadeCollectionView.isHidden = true
         self.hsvColorView.isHidden = false
+        self.lineView.isHidden = false
         self.oldColorView.isHidden = false
         self.arrow.isHidden = false
         self.currentColorView.isHidden = false
