@@ -32,6 +32,9 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         
         static let topButtonWidth: CGFloat = 44.0
         static let openMenuWidth: CGFloat = 35.0
+        
+        static let openMenuBottom: CGFloat = 10.0
+
         static let paletteLeft: CGFloat = 10.0
 
         static let lineHeight: CGFloat = 15.0
@@ -71,7 +74,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         $0.isHidden = true
     }
     
-    private let imgView = UIImageView().then {
+    private let preview = UIImageView().then {
         $0.backgroundColor = .clear
     }
     
@@ -125,7 +128,6 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
 
     override var prefersStatusBarHidden: Bool {
         if let reactor = self.reactor {
-            logger.verbose(reactor.currentState.isShowMenu)
             if reactor.currentState.isShowMenu {
                 return false
             } else {
@@ -156,10 +158,15 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.extendedLayoutIncludesOpaqueBars = true
         self.navigationController?.isNavigationBarHidden = true
 
         self.setupGARequest()
+        
+        if UserDefaults.isFirstLaunch() {
+            let reactor = TutorialViewReactor(colorCellReactorFactory: SparklerColorCellReactor.init)
+            self.navigationController?.pushViewController(TutorialViewController(reactor: reactor), animated: false)
+            
+        }
     }
     
     override func addViews() {
@@ -171,7 +178,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         self.contentView.addSubview(self.backBtn)
         self.contentView.addSubview(self.infoBtn)
         
-        self.contentView.addSubview(self.imgView)
+        self.contentView.addSubview(self.preview)
         
         self.contentView.addSubview(self.colorView)
         self.colorView.addSubview(self.colorPaletteView)
@@ -187,7 +194,11 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         super.setupConstraints()
         
         self.openMenuBtn.snp.makeConstraints { (make) in
-            make.bottom.equalTo(-safeAreaInsets.bottom)
+            if safeAreaInsets.bottom > 0 {
+                make.bottom.equalTo(-safeAreaInsets.bottom)
+            } else {
+                make.bottom.equalTo(-safeAreaInsets.bottom - Metric.openMenuBottom)
+            }
             make.width.equalTo(Metric.openMenuWidth)
             make.height.equalTo(self.openMenuBtn.snp.width)
             make.centerX.equalToSuperview()
@@ -199,7 +210,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         
         
         self.backBtn.snp.makeConstraints { (make) in
-            make.top.equalTo(safeAreaInsets.top)
+            make.top.equalTo(self.topLayoutGuide.snp.bottom)
             make.left.equalToSuperview()
             make.width.equalTo(Metric.topButtonWidth)
             make.height.equalTo(self.backBtn.snp.width)
@@ -207,18 +218,18 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         
         
         self.infoBtn.snp.makeConstraints { (make) in
-            make.top.equalTo(safeAreaInsets.top)
+            make.top.equalTo(self.backBtn.snp.top)
             make.right.equalToSuperview()
             make.width.equalTo(Metric.topButtonWidth)
             make.height.equalTo(self.backBtn.snp.width)
         }
         
-        self.imgView.snp.makeConstraints { (make) in
+        self.preview.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.centerY.equalToSuperview()
-            if let image = self.imgView.image {
-                make.height.equalTo(self.imgView.snp.width).dividedBy(image.size.width/image.size.height)
+            make.centerY.equalToSuperview().offset(-self.bannerView.frame.height / 2.0)
+            if let image = self.preview.image {
+                make.height.equalTo(self.preview.snp.width).dividedBy(image.size.width/image.size.height)
             }
         }
         
@@ -313,6 +324,8 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
                     make.edges.equalToSuperview()
                 })
                 
+                self.setNeedsStatusBarAppearanceUpdate()
+                
             })
             .disposed(by: self.disposeBag)
         
@@ -360,7 +373,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
 
         reactor.state
             .map { $0.image }
-            .bind(to: self.imgView.rx.image)
+            .bind(to: self.preview.rx.image)
             .disposed(by: self.disposeBag)
         
         reactor.state
@@ -410,16 +423,16 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         self.colorPaletteView.alpha = 0
         self.lineView.alpha = 0
 
+        self.setNeedsStatusBarAppearanceUpdate()
+
+        
 
         UIView.animate(withDuration: 0.25, animations: {
             self.contentView.alpha = 1.0
         }) { [weak self](_) in
             guard let `self` = self else { return }
-            self.setNeedsStatusBarAppearanceUpdate()
             self.showColorSelectAnimation()
         }
-   
-  
       
     }
     
@@ -525,6 +538,8 @@ extension SparklerViewController: GADInterstitialDelegate {
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         logger.verbose("interstitialDidDismissScreen")
         interstitial = createAndLoadInterstitial()
+        
+        self.setNeedsStatusBarAppearanceUpdate()
 
     }
    

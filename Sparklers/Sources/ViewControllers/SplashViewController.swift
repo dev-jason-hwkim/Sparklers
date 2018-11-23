@@ -21,7 +21,7 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     private struct Metric {
         static let touchScreenHeight: CGFloat = 70.0
         static let squareLineViewWidth: CGFloat = 300.0// * SCREEN_RATIO
-        static let logoLeftRight: CGFloat = 60.0
+        static let logoLeftRight: CGFloat = 80.0
     }
     
     private struct Color {

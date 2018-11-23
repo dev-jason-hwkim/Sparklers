@@ -25,6 +25,8 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
         static let menuTutorialBottom: CGFloat = 15.0
         
         static let openMenuWidth: CGFloat = 35.0
+        static let openMenuBottom: CGFloat = 10.0
+
         static let paletteLeft: CGFloat = 10.0
         static let lineHeight: CGFloat = 15.0
         static let colorListHeight: CGFloat = 60.0
@@ -35,6 +37,9 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
         static let colorTutorialLeft: CGFloat = 20.0
         static let colorTutorialBottom: CGFloat = 15.0
         
+        static let previewTutorialTop: CGFloat = 10.0
+        static let previewTutorialLeft: CGFloat = 10.0
+
         static let lastTutorialTop: CGFloat = 15.0
 
     }
@@ -47,7 +52,7 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
     }
     
     private struct Font {
-        static let titleLabel = UIFont.systemFont(ofSize: 48)
+        static let titleLabel = UIFont.systemFont(ofSize: 24)
         static let tutorial = UIFont.boldSystemFont(ofSize: 20)
 
     }
@@ -95,7 +100,7 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
         $0.layer.borderColor = Color.circleBorder.cgColor
     }
     
-    private let imgView = UIImageView().then {
+    private let preview = UIImageView().then {
         $0.backgroundColor = .clear
         $0.image = #imageLiteral(resourceName: "preview_sample")
         $0.isHidden = true
@@ -132,6 +137,16 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
         $0.register(Reusable.colorCell)
         $0.register(Reusable.emptyView, kind: "emptyView")
     }
+    
+    
+    private let previewTutorial = UILabel().then {
+        $0.textColor = .white
+        $0.font = Font.tutorial
+        $0.text = NSLocalizedString("tutorial_color_preview", comment: "Please check the preview")
+        $0.isHidden = true
+
+    }
+    
     
     
     private let colorTutorial = UILabel().then {
@@ -214,9 +229,13 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
         
         
         
+        
+        
         self.view.addSubview(self.colorTutorial)
         
-        self.view.addSubview(self.imgView)
+        self.view.addSubview(self.preview)
+        self.view.addSubview(self.previewTutorial)
+        
         self.view.addSubview(self.colorView)
         self.colorView.addSubview(self.colorPaletteView)
         self.colorView.addSubview(self.lineView)
@@ -260,7 +279,11 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
         
         
         self.openMenu.snp.makeConstraints { (make) in
-            make.bottom.equalTo(-safeAreaInsets.bottom)
+            if safeAreaInsets.bottom > 0 {
+                make.bottom.equalTo(-safeAreaInsets.bottom)
+            } else {
+                make.bottom.equalTo(-safeAreaInsets.bottom - Metric.openMenuBottom)
+            }
             make.width.equalTo(Metric.openMenuWidth)
             make.height.equalTo(self.openMenu.snp.width)
             make.centerX.equalToSuperview()
@@ -269,13 +292,19 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
             make.edges.equalTo(self.openMenu.snp.edges)
         }
         
-        self.imgView.snp.makeConstraints { (make) in
+        self.preview.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.centerY.equalToSuperview()
-            if let image = self.imgView.image {
-                make.height.equalTo(self.imgView.snp.width).dividedBy(image.size.width/image.size.height)
+            if let image = self.preview.image {
+                make.height.equalTo(self.preview.snp.width).dividedBy(image.size.width/image.size.height)
             }
+        }
+        
+        self.previewTutorial.snp.makeConstraints { (make) in
+            make.left.equalTo(self.colorTutorial.snp.left)
+            make.top.equalTo(self.preview.snp.bottom).offset(Metric.topButtonMargin + Metric.lastTutorialTop)
+
         }
         
         self.colorTutorial.snp.makeConstraints { (make) in
@@ -353,9 +382,9 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
                 case 2:
                     self.colorTutorial.textColor = UIColor.color(red: 255, green: 255, blue: 255, alpha: 0.4)
 
-                    self.showImageAnimation()
+                    self.showPreviewAnimation()
                 case 3:
-                    self.showLastAnimation()
+                    self.showResultAnimation()
                 case 4:
                     self.navigationController?.popViewController(animated: true)
                     
@@ -424,18 +453,21 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
             
         }
     }
-    private func showImageAnimation() {
-        self.imgView.isHidden = false
-        self.imgView.alpha = 0.0
+    private func showPreviewAnimation() {
+        self.preview.isHidden = false
+        self.previewTutorial.isHidden = false
+        self.previewTutorial.alpha = 0.0
+        self.preview.alpha = 0.0
         self.colorView.alpha = 1.0
         UIView.animate(withDuration: 0.3, animations: {
-            self.imgView.alpha = 1.0
+            self.preview.alpha = 1.0
+            self.previewTutorial.alpha = 1.0
             self.colorView.alpha = 0.6
 
         })
     }
 
-    private func showLastAnimation() {
+    private func showResultAnimation() {
         self.titleLabel.isHidden = true
 
         self.backBtn.isHidden = false

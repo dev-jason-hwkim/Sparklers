@@ -16,9 +16,9 @@ final class InfoViewController: BaseViewController {
     private struct Metric {
         static let topButtonWidth: CGFloat = 44.0
 
-        static let logoLeftRight: CGFloat = 60.0
+        static let logoLeftRight: CGFloat = 80.0
         static let versionTop: CGFloat = 15.0
-        static let copyrightBottom: CGFloat  = 5.0
+        static let copyrightBottom: CGFloat  = 10.0
 
     }
     
@@ -46,8 +46,10 @@ final class InfoViewController: BaseViewController {
     private let version = UILabel().then {
         $0.textColor = .white
         $0.font = Font.version
-        if let text = Bundle.main.infoDictionary?["CFBundleShortVersionString"]  as? String {
-            $0.text = text
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"]  as? String,
+            let build = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String {
+            
+            $0.text = version + " (Build \(build))"
         }
         
     }
@@ -105,7 +107,7 @@ final class InfoViewController: BaseViewController {
         super.setupConstraints()
         
         self.backBtn.snp.makeConstraints { (make) in
-            make.top.equalTo(safeAreaInsets.top)
+            make.top.equalTo(self.topLayoutGuide.snp.bottom)
             make.left.equalToSuperview()
             make.width.equalTo(Metric.topButtonWidth)
             make.height.equalTo(self.backBtn.snp.width)
@@ -139,7 +141,13 @@ final class InfoViewController: BaseViewController {
         
         self.copyright.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(-safeAreaInsets.bottom)
+            
+            if safeAreaInsets.bottom > 0 {
+                make.bottom.equalTo(-safeAreaInsets.bottom)
+            } else {
+                make.bottom.equalTo(-safeAreaInsets.bottom - Metric.copyrightBottom)
+            }
+            
         }
     }
 }

@@ -419,7 +419,7 @@ final class ColorPickerAlertView: UIView, View {
         self.mainColorCollectionView.isHidden = true
         self.colorShadeCollectionView.isHidden = true
         self.hsvColorView.isHidden = false
-        self.lineView.isHidden = false
+        self.lineView.isHidden = true
         self.oldColorView.isHidden = false
         self.arrow.isHidden = false
         self.currentColorView.isHidden = false
