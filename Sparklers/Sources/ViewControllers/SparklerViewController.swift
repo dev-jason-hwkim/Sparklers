@@ -410,7 +410,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
     }
     
     private func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: GoogleAdMobInfo.AdUnitId.colorPicker.rawValue)
+        let interstitial = GADInterstitial(adUnitID: GoogleAdMobInfo.AdUnitId.colorSelectAction.rawValue)
         interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial
