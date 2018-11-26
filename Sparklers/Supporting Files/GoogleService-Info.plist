@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>947058515861-e8gljqsriinl9u2fktk4hiii23ic4lci.apps.googleusercontent.com</string>
+	<string>947058515861-hvgqb85bede0tqt95b531dho90p16da3.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.947058515861-e8gljqsriinl9u2fktk4hiii23ic4lci</string>
+	<string>com.googleusercontent.apps.947058515861-hvgqb85bede0tqt95b531dho90p16da3</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAVIUlX1BA7he2AADwZaNbB5MLkFgN8FZ8</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.tools.pic.travel.sparklers</string>
+	<string>com.tools.pic.travel.sparkler</string>
 	<key>PROJECT_ID</key>
 	<string>sparclers-d5f4f</string>
 	<key>STORAGE_BUCKET</key>
@@ -27,13 +27,13 @@
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
 	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:947058515861:ios:e92ab514e3ed4797</string>
+	<string>1:947058515861:ios:6549d0a1477472a9</string>
 	<key>DATABASE_URL</key>
 	<string>https://sparclers-d5f4f.firebaseio.com</string>
 </dict>

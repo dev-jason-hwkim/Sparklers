@@ -31,6 +31,7 @@
 		2C6DB5B0210E9C7400BC7057 /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5AF210E9C7400BC7057 /* CompositionRoot.swift */; };
 		2C6DB5B4210E9F8900BC7057 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5B3210E9F8900BC7057 /* BaseViewController.swift */; };
 		2C6DB5B7210EA04600BC7057 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5B6210EA04600BC7057 /* Logger.swift */; };
+		2C86E77821ABF49D004C5F69 /* UserDefaults-isFirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C86E77721ABF49D004C5F69 /* UserDefaults-isFirstLaunch.swift */; };
 		2CB1707F214F3594007B65CF /* UIImage-Tint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB1707E214F3594007B65CF /* UIImage-Tint.swift */; };
 		2CB17081214F3623007B65CF /* RainbowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB17080214F3623007B65CF /* RainbowLabel.swift */; };
 		2CB17082214F412D007B65CF /* StubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A1213CBB81005FD69C /* StubError.swift */; };
@@ -100,6 +101,7 @@
 		2C6DB5AF210E9C7400BC7057 /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 		2C6DB5B3210E9F8900BC7057 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2C6DB5B6210EA04600BC7057 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		2C86E77721ABF49D004C5F69 /* UserDefaults-isFirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults-isFirstLaunch.swift"; sourceTree = "<group>"; };
 		2CB1707E214F3594007B65CF /* UIImage-Tint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage-Tint.swift"; sourceTree = "<group>"; };
 		2CB17080214F3623007B65CF /* RainbowLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowLabel.swift; sourceTree = "<group>"; };
 		2CB17086214F4324007B65CF /* ColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				2CF632A121A4032C006E713D /* Snap.swift */,
 				2CF632A521A409DD006E713D /* ColorUtils.swift */,
 				2C0D8FFB21A6BFAD001F737E /* KYDrawerController-StatusBar.swift */,
+				2C86E77721ABF49D004C5F69 /* UserDefaults-isFirstLaunch.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				2CE477AD213CBC2D005FD69C /* SparklerColorCollectionViewSection.swift in Sources */,
 				2C6DB5B7210EA04600BC7057 /* Logger.swift in Sources */,
 				2CE47796213CB790005FD69C /* SparklerViewController.swift in Sources */,
+				2C86E77821ABF49D004C5F69 /* UserDefaults-isFirstLaunch.swift in Sources */,
 				2C6A216C213BE9C3006C5450 /* UIColor-Rgb.swift in Sources */,
 				2C6A2159213BD36F006C5450 /* SplashViewReactor.swift in Sources */,
 				2C6CB87821A18CB500084F88 /* TutorialViewController.swift in Sources */,
@@ -775,7 +779,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.travelpictools.sparclers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tools.pic.travel.sparkler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = WildCard;
 				SWIFT_VERSION = 4.0;
@@ -788,7 +792,7 @@
 			baseConfigurationReference = 0C4D3572262B384BEDB0EC00 /* Pods-Sparklers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6F5H8KU4M7;
 				INFOPLIST_FILE = "$(SRCROOT)/Sparklers/Supporting Files/Info.plist";
@@ -797,9 +801,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.travelpictools.sparclers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tools.pic.travel.sparkler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = WildCard;
+				PROVISIONING_PROFILE_SPECIFIER = "Sparklers AppStore";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
