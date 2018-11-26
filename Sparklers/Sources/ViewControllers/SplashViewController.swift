@@ -12,6 +12,7 @@ import RxCocoa
 import RxViewController
 import RxGesture
 import ReactorKit
+import PersonalizedAdConsent
 
 
 
@@ -33,6 +34,13 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
         static let touchScreen = UIFont.boldSystemFont(ofSize: 20)
     }
     
+    
+    private enum LoadState {
+        case not_require
+        case loading
+        case loaded
+        case error
+    }
     
     private let playerView = PlayerView().then {
         $0.backgroundColor = .black
@@ -62,11 +70,22 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
         
     }
     
+    
+    
     private let presentSparklerScreen: () -> Void
+    
+   
+    private var consentForm : PACConsentForm? {
+        return self.getConsentForm()
+    }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    private var consentStatus : PACConsentStatus? = nil
+    private var loadState = LoadState.not_require
+    
     
     init(
         reactor: SplashViewReactor,
@@ -86,7 +105,15 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
         super.viewDidLoad()
         self.startCoverViewAnimation()
         self.startTouchScreenAnimation()
-//        self.squareLineView.animationStart(timeInterval: 1)
+        
+        logger.verbose(UserDefaults.isCheckGDPR)
+        
+        if UserDefaults.isCheckGDPR == false {
+            self.consentAdCheck()
+        } else {
+            consentStatus = PACConsentInformation.sharedInstance.consentStatus
+        }
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -172,7 +199,18 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
             .when(.ended)
             .subscribe(onNext: {[weak self] (_) in
                 guard let `self` = self else { return }
+                
+                // TO DO: 개인화 광고 잠시 중단
+//                if PACConsentInformation.sharedInstance.isRequestLocationInEEAOrUnknown {
+//                    self.openConsentPopup()
+//                } else {
+//                    self.presentSparklerScreen()
+//                }
+                
                 self.presentSparklerScreen()
+
+                
+                
             })
             .disposed(by: self.disposeBag)
         
@@ -194,15 +232,100 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
 
         })
     }
+    
     private func startTouchScreenAnimation() {
         UIView.animate(withDuration: 0.8,
                        delay: 1.5,
                        options: [.repeat, .autoreverse, .allowUserInteraction],
                        animations: {
+                      
+                        
                         self.touchScreen.alpha = 0.0
                         self.touchScreen.alpha = 1.0
         }, completion: nil)
     }
     
+    private func getConsentForm () -> PACConsentForm? {
+        guard let privacyUrl = URL(string: "https://sparklers.travelpictools.com"),
+            let form = PACConsentForm(applicationPrivacyPolicyURL: privacyUrl) else {
+                logger.error("incorrect privacy URL.")
+                return nil
+        }
+        form.shouldOfferPersonalizedAds = true
+        form.shouldOfferNonPersonalizedAds = true
+        form.shouldOfferAdFree = true
+        return form
+    }
+    
+    private func consentAdCheck() {
+        PACConsentInformation.sharedInstance
+            .requestConsentInfoUpdate(forPublisherIdentifiers: [GoogleAdMobInfo.publishId]) { [weak self] (error) in
+                guard let `self` = self else { return}
+                if let error = error {
+                    self.touchScreen.text = "Touch Screen"
+                    self.consentStatus = .unknown
+                    logger.error(error)
+                } else {
+                    self.touchScreen.text = "Touch Screen"
+                    
+                    //TODO 개인화 광고 잠시 중단
+//                    if PACConsentInformation.sharedInstance.isRequestLocationInEEAOrUnknown {
+//                        self.loadState = .loading
+//                        self.loadConsentForm()
+//                    } else {
+//                        PACConsentInformation.sharedInstance.consentStatus = .personalized
+//                        self.consentStatus = .personalized
+//                    }
+                    
+                    
+                    if PACConsentInformation.sharedInstance.isRequestLocationInEEAOrUnknown {
+                        PACConsentInformation.sharedInstance.consentStatus = .nonPersonalized
+                        self.consentStatus = .nonPersonalized
+                    } else {
+                        PACConsentInformation.sharedInstance.consentStatus = .personalized
+                        self.consentStatus = .personalized
+
+                    }
+                    
+                    UserDefaults.isCheckGDPR = true
+
+                }
+        }
+    }
+    
+    private func loadConsentForm() {
+        self.consentForm?.load(completionHandler: { (error) in
+            if let error = error {
+                logger.error(error)
+            }  else {
+                logger.verbose("loadConsentFormSuccess")
+            }
+        })
+    }
+    
+    private func openConsentPopup() {
+        switch self.loadState {
+        case .error:
+            self.presentSparklerScreen()
+        case .loaded:
+            self.presentConsentForm()
+            logger.verbose("loaded")
+        default:
+            break
+            
+        }
+    }
+    
+    private func presentConsentForm() {
+        self.consentForm?.present(from: self) { (error, userPrefersAdFree) in
+            if let error = error {
+                logger.error(error)
+            } else if userPrefersAdFree {
+                logger.verbose("userPrefersAdFree : \(userPrefersAdFree)")
+            } else {
+                // Check the user's consent choice.
+                self.consentStatus = PACConsentInformation.sharedInstance.consentStatus
+            }
+        }    }
 
 }

@@ -374,7 +374,6 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] (index) in
                 guard let `self` = self else { return }
-                logger.verbose(index)
                 switch index {
                 case 1:
                     self.menuCircle.layer.removeAllAnimations()
@@ -432,7 +431,6 @@ final class TutorialViewController: BaseViewController, ReactorKit.View {
 
 
         self.colorCollectionView.layoutIfNeeded()
-        logger.verbose(self.colorCollectionView.visibleCells)
         let indexs = self.colorCollectionView.indexPathsForVisibleItems.map { $0.item }.sorted()
         let start = indexs.first ?? 0
         let end = indexs.last ?? 0

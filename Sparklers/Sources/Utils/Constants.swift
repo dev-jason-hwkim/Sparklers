@@ -12,6 +12,7 @@ import UIKit
 struct GoogleAdMobInfo {
     static let appId = "ca-app-pub-4718977625494132~6911275288"
 
+    static let publishId = "pub-4718977625494132"
     enum AdUnitId: String {
         #if DEBUG
         case selectColorPage = "ca-app-pub-3940256099942544/2934735716"
@@ -27,6 +28,12 @@ struct GoogleAdMobInfo {
     }
 }
 
+
+struct UserDefaultsKey {
+    static let isFirstLaunching = "isFirstLaunching" // 최초 실행 체크
+    static let isCheckGDPR = "isCheckGDPR" // 최초 실행 체크
+    
+}
 
 
 

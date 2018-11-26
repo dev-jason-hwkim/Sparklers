@@ -31,8 +31,6 @@ target 'Sparklers' do
     # Architecture
     pod 'ReactorKit'
 
-    # Animation
-    pod 'ValueAnimator'
     
     
     
@@ -44,10 +42,16 @@ target 'Sparklers' do
     pod 'Firebase/Core'
     pod 'Firebase/Crash'
     pod 'Firebase/AdMob'
+    pod 'PersonalizedAdConsent'
+
     pod 'Fabric'
     pod 'Crashlytics'
     
 
-    
+    target 'SparklersTests' do
+        inherit! :complete
+#        pod 'Stubber'
+    end
+
     
 end

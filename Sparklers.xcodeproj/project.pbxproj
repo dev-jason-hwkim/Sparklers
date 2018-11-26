@@ -32,11 +32,10 @@
 		2C6DB5B4210E9F8900BC7057 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5B3210E9F8900BC7057 /* BaseViewController.swift */; };
 		2C6DB5B7210EA04600BC7057 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5B6210EA04600BC7057 /* Logger.swift */; };
 		2C86E77821ABF49D004C5F69 /* UserDefaults-isFirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C86E77721ABF49D004C5F69 /* UserDefaults-isFirstLaunch.swift */; };
+		2C86E78821ABFE2D004C5F69 /* SparklersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C86E78721ABFE2D004C5F69 /* SparklersTests.swift */; };
+		2C86E78A21AC07CC004C5F69 /* UserDefaults-isCheckGADR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C86E78921AC07CC004C5F69 /* UserDefaults-isCheckGADR.swift */; };
 		2CB1707F214F3594007B65CF /* UIImage-Tint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB1707E214F3594007B65CF /* UIImage-Tint.swift */; };
 		2CB17081214F3623007B65CF /* RainbowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB17080214F3623007B65CF /* RainbowLabel.swift */; };
-		2CB17082214F412D007B65CF /* StubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A1213CBB81005FD69C /* StubError.swift */; };
-		2CB17083214F412F007B65CF /* StubAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A0213CBB81005FD69C /* StubAppDelegate.swift */; };
-		2CB17084214F4133007B65CF /* TestMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A3213CBB81005FD69C /* TestMain.swift */; };
 		2CB17087214F4324007B65CF /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB17086214F4324007B65CF /* ColorPaletteView.swift */; };
 		2CC0D45421A38E230078F61E /* ColorPickerAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0D45321A38E230078F61E /* ColorPickerAlertView.swift */; };
 		2CC0D45621A38E950078F61E /* ColorPickerAlertViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0D45521A38E950078F61E /* ColorPickerAlertViewReactor.swift */; };
@@ -49,7 +48,6 @@
 		2CE4779A213CB9FC005FD69C /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE47799213CB9FC005FD69C /* BaseCollectionViewCell.swift */; };
 		2CE4779C213CBA3C005FD69C /* SparklerColorCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4779B213CBA3C005FD69C /* SparklerColorCellReactor.swift */; };
 		2CE477AD213CBC2D005FD69C /* SparklerColorCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477AC213CBC2D005FD69C /* SparklerColorCollectionViewSection.swift */; };
-		2CE477AE213CBDAA005FD69C /* TestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477A2213CBB81005FD69C /* TestConfiguration.swift */; };
 		2CE477B1213D3601005FD69C /* UICollectionView-Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477B0213D3601005FD69C /* UICollectionView-Rx.swift */; };
 		2CF6329E21A3D7DF006E713D /* ColorPickerCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6329D21A3D7DF006E713D /* ColorPickerCollectionViewSection.swift */; };
 		2CF632A221A4032C006E713D /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF632A121A4032C006E713D /* Snap.swift */; };
@@ -62,12 +60,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2C613456210E9586008AE829 /* PBXContainerItemProxy */ = {
+		2C86E78221ABFD63004C5F69 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2C613439210E9586008AE829 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2C613440210E9586008AE829;
-			remoteInfo = Sparclers;
+			remoteInfo = Sparklers;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -82,7 +80,6 @@
 		2C613444210E9586008AE829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C61344B210E9586008AE829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C61344E210E9586008AE829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2C613455210E9586008AE829 /* SparklersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparklersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6A214E213BC7F0006C5450 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2C6A2150213BC86D006C5450 /* ColorPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPackage.swift; sourceTree = "<group>"; };
 		2C6A2156213BD351006C5450 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +99,9 @@
 		2C6DB5B3210E9F8900BC7057 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2C6DB5B6210EA04600BC7057 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		2C86E77721ABF49D004C5F69 /* UserDefaults-isFirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults-isFirstLaunch.swift"; sourceTree = "<group>"; };
+		2C86E77D21ABFD63004C5F69 /* SparklersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparklersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C86E78721ABFE2D004C5F69 /* SparklersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparklersTests.swift; path = SparklersTests/SparklersTests.swift; sourceTree = SOURCE_ROOT; };
+		2C86E78921AC07CC004C5F69 /* UserDefaults-isCheckGADR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults-isCheckGADR.swift"; sourceTree = "<group>"; };
 		2CB1707E214F3594007B65CF /* UIImage-Tint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage-Tint.swift"; sourceTree = "<group>"; };
 		2CB17080214F3623007B65CF /* RainbowLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowLabel.swift; sourceTree = "<group>"; };
 		2CB17086214F4324007B65CF /* ColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
@@ -116,10 +116,6 @@
 		2CE47797213CB98F005FD69C /* SparklerColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparklerColorCell.swift; sourceTree = "<group>"; };
 		2CE47799213CB9FC005FD69C /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CE4779B213CBA3C005FD69C /* SparklerColorCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparklerColorCellReactor.swift; sourceTree = "<group>"; };
-		2CE477A0213CBB81005FD69C /* StubAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubAppDelegate.swift; sourceTree = "<group>"; };
-		2CE477A1213CBB81005FD69C /* StubError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubError.swift; sourceTree = "<group>"; };
-		2CE477A2213CBB81005FD69C /* TestConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestConfiguration.swift; sourceTree = "<group>"; };
-		2CE477A3213CBB81005FD69C /* TestMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMain.swift; sourceTree = "<group>"; };
 		2CE477A4213CBB81005FD69C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CE477AC213CBC2D005FD69C /* SparklerColorCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparklerColorCollectionViewSection.swift; sourceTree = "<group>"; };
 		2CE477B0213D3601005FD69C /* UICollectionView-Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView-Rx.swift"; sourceTree = "<group>"; };
@@ -151,7 +147,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C613452210E9586008AE829 /* Frameworks */ = {
+		2C86E77A21ABFD63004C5F69 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -176,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				2C613441210E9586008AE829 /* Sparklers.app */,
-				2C613455210E9586008AE829 /* SparklersTests.xctest */,
+				2C86E77D21ABFD63004C5F69 /* SparklersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,6 +228,7 @@
 				2CF632A521A409DD006E713D /* ColorUtils.swift */,
 				2C0D8FFB21A6BFAD001F737E /* KYDrawerController-StatusBar.swift */,
 				2C86E77721ABF49D004C5F69 /* UserDefaults-isFirstLaunch.swift */,
+				2C86E78921AC07CC004C5F69 /* UserDefaults-isCheckGADR.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -319,20 +316,9 @@
 		2CE4779E213CBB81005FD69C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2CE4779F213CBB81005FD69C /* Stubs */,
-				2CE477A2213CBB81005FD69C /* TestConfiguration.swift */,
-				2CE477A3213CBB81005FD69C /* TestMain.swift */,
+				2C86E78721ABFE2D004C5F69 /* SparklersTests.swift */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		2CE4779F213CBB81005FD69C /* Stubs */ = {
-			isa = PBXGroup;
-			children = (
-				2CE477A0213CBB81005FD69C /* StubAppDelegate.swift */,
-				2CE477A1213CBB81005FD69C /* StubError.swift */,
-			);
-			path = Stubs;
 			sourceTree = "<group>";
 		};
 		2CE477AB213CBBF2005FD69C /* Sections */ = {
@@ -401,22 +387,22 @@
 			productReference = 2C613441210E9586008AE829 /* Sparklers.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2C613454210E9586008AE829 /* SparklersTests */ = {
+		2C86E77C21ABFD63004C5F69 /* SparklersTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C61346C210E9587008AE829 /* Build configuration list for PBXNativeTarget "SparklersTests" */;
+			buildConfigurationList = 2C86E78421ABFD63004C5F69 /* Build configuration list for PBXNativeTarget "SparklersTests" */;
 			buildPhases = (
-				2C613451210E9586008AE829 /* Sources */,
-				2C613452210E9586008AE829 /* Frameworks */,
-				2C613453210E9586008AE829 /* Resources */,
+				2C86E77921ABFD63004C5F69 /* Sources */,
+				2C86E77A21ABFD63004C5F69 /* Frameworks */,
+				2C86E77B21ABFD63004C5F69 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2C613457210E9586008AE829 /* PBXTargetDependency */,
+				2C86E78321ABFD63004C5F69 /* PBXTargetDependency */,
 			);
 			name = SparklersTests;
-			productName = SparclersTests;
-			productReference = 2C613455210E9586008AE829 /* SparklersTests.xctest */;
+			productName = SparklersTests;
+			productReference = 2C86E77D21ABFD63004C5F69 /* SparklersTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -425,15 +411,16 @@
 		2C613439210E9586008AE829 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = HyunWoo;
 				TargetAttributes = {
 					2C613440210E9586008AE829 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					2C613454210E9586008AE829 = {
-						CreatedOnToolsVersion = 9.4.1;
+					2C86E77C21ABFD63004C5F69 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 2C613440210E9586008AE829;
 					};
 				};
@@ -452,7 +439,7 @@
 			projectRoot = "";
 			targets = (
 				2C613440210E9586008AE829 /* Sparklers */,
-				2C613454210E9586008AE829 /* SparklersTests */,
+				2C86E77C21ABFD63004C5F69 /* SparklersTests */,
 			);
 		};
 /* End PBXProject section */
@@ -471,7 +458,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C613453210E9586008AE829 /* Resources */ = {
+		2C86E77B21ABFD63004C5F69 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -514,6 +501,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/ManualLayout/ManualLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ReusableKit/ReusableKit.framework",
@@ -526,7 +514,6 @@
 				"${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
-				"${BUILT_PRODUCTS_DIR}/ValueAnimator/ValueAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -539,6 +526,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ManualLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PersonalizedAdConsent.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReusableKit.framework",
@@ -551,7 +539,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ValueAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +576,7 @@
 				2CB17087214F4324007B65CF /* ColorPaletteView.swift in Sources */,
 				2CF6329E21A3D7DF006E713D /* ColorPickerCollectionViewSection.swift in Sources */,
 				2C6DB5B4210E9F8900BC7057 /* BaseViewController.swift in Sources */,
+				2C86E78A21AC07CC004C5F69 /* UserDefaults-isCheckGADR.swift in Sources */,
 				2C6CB88221A1C67B00084F88 /* InfoViewController.swift in Sources */,
 				2CC0D45821A396060078F61E /* ColorPickerCell.swift in Sources */,
 				2C613445210E9586008AE829 /* AppDelegate.swift in Sources */,
@@ -610,24 +598,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C613451210E9586008AE829 /* Sources */ = {
+		2C86E77921ABFD63004C5F69 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CB17082214F412D007B65CF /* StubError.swift in Sources */,
-				2CE477AE213CBDAA005FD69C /* TestConfiguration.swift in Sources */,
-				2CB17084214F4133007B65CF /* TestMain.swift in Sources */,
-				2CB17083214F412F007B65CF /* StubAppDelegate.swift in Sources */,
+				2C86E78821ABFE2D004C5F69 /* SparklersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2C613457210E9586008AE829 /* PBXTargetDependency */ = {
+		2C86E78321ABFD63004C5F69 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2C613440210E9586008AE829 /* Sparklers */;
-			targetProxy = 2C613456210E9586008AE829 /* PBXContainerItemProxy */;
+			targetProxy = 2C86E78221ABFD63004C5F69 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -809,43 +794,49 @@
 			};
 			name = Release;
 		};
-		2C61346D210E9587008AE829 /* Debug */ = {
+		2C86E78521ABFD63004C5F69 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6F5H8KU4M7;
-				INFOPLIST_FILE = SparclersTests/Info.plist;
+				INFOPLIST_FILE = SparklersTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyunwoo.SparclersTests;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyunwoo.SparklersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sparklers.app/Sparklers";
 			};
 			name = Debug;
 		};
-		2C61346E210E9587008AE829 /* Release */ = {
+		2C86E78621ABFD63004C5F69 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6F5H8KU4M7;
-				INFOPLIST_FILE = SparclersTests/Info.plist;
+				INFOPLIST_FILE = SparklersTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyunwoo.SparclersTests;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyunwoo.SparklersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sparklers.app/Sparklers";
 			};
@@ -872,11 +863,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C61346C210E9587008AE829 /* Build configuration list for PBXNativeTarget "SparklersTests" */ = {
+		2C86E78421ABFD63004C5F69 /* Build configuration list for PBXNativeTarget "SparklersTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2C61346D210E9587008AE829 /* Debug */,
-				2C61346E210E9587008AE829 /* Release */,
+				2C86E78521ABFD63004C5F69 /* Debug */,
+				2C86E78621ABFD63004C5F69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
