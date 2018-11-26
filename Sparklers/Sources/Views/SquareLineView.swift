@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ValueAnimator
+//import ValueAnimator
 extension BinaryInteger {
     var degreesToRadians: CGFloat { return CGFloat(Int(self)) * .pi / 180 }
 }
@@ -17,7 +17,7 @@ final class SquareLineView: UIView {
     
     private var changeSize: CGFloat = 0.0
     
-    private var animator: ValueAnimator?
+//    private var animator: ValueAnimator?
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -45,18 +45,18 @@ final class SquareLineView: UIView {
         self.animationStop()
         
         
-        animator = ValueAnimator.animate("count", from: 0,
-                                         to: 1,
-                                         duration: timeInterval,
-                                         easing: EaseCircular.easeInOut(),
-                                         onChanged: { [weak self] (p, v) in
-                                            guard let `self` = self else { return }
-                                            self.changeSize = self.bounds.width * CGFloat(v.value)
-                                            self.setNeedsDisplay()
-        })
-    
-
-        animator?.resume()
+//        animator = ValueAnimator.animate("count", from: 0,
+//                                         to: 1,
+//                                         duration: timeInterval,
+//                                         easing: EaseCircular.easeInOut(),
+//                                         onChanged: { [weak self] (p, v) in
+//                                            guard let `self` = self else { return }
+//                                            self.changeSize = self.bounds.width * CGFloat(v.value)
+//                                            self.setNeedsDisplay()
+//        })
+//
+//
+//        animator?.resume()
         
         UIView.animate(withDuration: timeInterval) {
             self.transform = CGAffineTransform(rotationAngle: 10.degreesToRadians)
@@ -65,9 +65,9 @@ final class SquareLineView: UIView {
     }
     
     func animationStop() {
-        animator?.finish()
+//        animator?.finish()
         self.layer.removeAllAnimations()
-        animator = nil
+//        animator = nil
         self.changeSize = 0
     }
     
