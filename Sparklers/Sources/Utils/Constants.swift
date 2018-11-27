@@ -13,6 +13,8 @@ struct GoogleAdMobInfo {
     static let appId = "ca-app-pub-4718977625494132~6911275288"
 
     static let publishId = "pub-4718977625494132"
+    
+    static let privacyUrl = "https://sparklers.travelpictools.com"
     enum AdUnitId: String {
 //        #if DEBUG
 //        case selectColorPage = "ca-app-pub-3940256099942544/2934735716" // 배너

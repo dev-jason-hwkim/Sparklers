@@ -74,16 +74,13 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     
     private let presentSparklerScreen: () -> Void
     
+    private var form: PACConsentForm?
    
-    private var consentForm : PACConsentForm? {
-        return self.getConsentForm()
-    }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    private var consentStatus : PACConsentStatus? = nil
     private var loadState = LoadState.not_require
     
     
@@ -94,6 +91,8 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
         defer { self.reactor = reactor }
         self.presentSparklerScreen = presentSparklerScreen
         super.init()
+        
+        form = self.getConsentsForm()
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -108,12 +107,14 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
         
         logger.verbose(UserDefaults.isCheckGDPR)
         
+  
+        
+        self.consentStatusLog()
+        
         if UserDefaults.isCheckGDPR == false {
+            self.touchScreen.text = "Please wait..."
             self.consentAdCheck()
-        } else {
-            consentStatus = PACConsentInformation.sharedInstance.consentStatus
         }
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -201,15 +202,14 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
                 guard let `self` = self else { return }
                 
                 // TO DO: 개인화 광고 잠시 중단
-//                if PACConsentInformation.sharedInstance.isRequestLocationInEEAOrUnknown {
-//                    self.openConsentPopup()
-//                } else {
-//                    self.presentSparklerScreen()
-//                }
-                
-                self.presentSparklerScreen()
-
-                
+                let information = PACConsentInformation.sharedInstance
+                if information.isRequestLocationInEEAOrUnknown
+                    && information.consentStatus == .unknown {
+                    self.openConsentPopup()
+                } else {
+                    
+                    self.presentSparklerScreen()
+                }
                 
             })
             .disposed(by: self.disposeBag)
@@ -234,6 +234,8 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     }
     
     private func startTouchScreenAnimation() {
+        
+        
         UIView.animate(withDuration: 0.8,
                        delay: 1.5,
                        options: [.repeat, .autoreverse, .allowUserInteraction],
@@ -244,9 +246,10 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
                         self.touchScreen.alpha = 1.0
         }, completion: nil)
     }
+
     
-    private func getConsentForm () -> PACConsentForm? {
-        guard let privacyUrl = URL(string: "https://sparklers.travelpictools.com"),
+    private func getConsentsForm() -> PACConsentForm? {
+        guard let privacyUrl = URL(string: GoogleAdMobInfo.privacyUrl),
             let form = PACConsentForm(applicationPrivacyPolicyURL: privacyUrl) else {
                 logger.error("incorrect privacy URL.")
                 return nil
@@ -254,51 +257,50 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
         form.shouldOfferPersonalizedAds = true
         form.shouldOfferNonPersonalizedAds = true
         form.shouldOfferAdFree = true
+        
         return form
     }
     
     private func consentAdCheck() {
-        PACConsentInformation.sharedInstance
-            .requestConsentInfoUpdate(forPublisherIdentifiers: [GoogleAdMobInfo.publishId]) { [weak self] (error) in
-                guard let `self` = self else { return}
-                if let error = error {
-                    self.touchScreen.text = "Touch Screen"
-                    self.consentStatus = .unknown
-                    logger.error(error)
+        PACConsentInformation.sharedInstance.consentStatus = PACConsentStatus.unknown
+
+        PACConsentInformation.sharedInstance.requestConsentInfoUpdate(
+        forPublisherIdentifiers: [GoogleAdMobInfo.publishId]) { [weak self] (error) in
+            guard let `self` = self else { return }
+            if let error = error {
+                self.touchScreen.text = "Touch Screen"
+                PACConsentInformation.sharedInstance.consentStatus = .unknown
+                logger.error(error)
+            } else  {
+                self.consentStatusLog()
+                
+                if PACConsentInformation.sharedInstance.isRequestLocationInEEAOrUnknown {
+                    self.loadState = .loading
+                    self.loadConsentForm()
                 } else {
                     self.touchScreen.text = "Touch Screen"
-                    
-                    //TODO 개인화 광고 잠시 중단
-//                    if PACConsentInformation.sharedInstance.isRequestLocationInEEAOrUnknown {
-//                        self.loadState = .loading
-//                        self.loadConsentForm()
-//                    } else {
-//                        PACConsentInformation.sharedInstance.consentStatus = .personalized
-//                        self.consentStatus = .personalized
-//                    }
-                    
-                    
-                    if PACConsentInformation.sharedInstance.isRequestLocationInEEAOrUnknown {
-                        PACConsentInformation.sharedInstance.consentStatus = .nonPersonalized
-                        self.consentStatus = .nonPersonalized
-                    } else {
-                        PACConsentInformation.sharedInstance.consentStatus = .personalized
-                        self.consentStatus = .personalized
-
-                    }
-                    
-                    UserDefaults.isCheckGDPR = true
-
+                    PACConsentInformation.sharedInstance.consentStatus = .personalized
                 }
+                
+                
+                
+                
+                UserDefaults.isCheckGDPR = true
+            }
         }
+     
     }
     
+    
+    
+    
     private func loadConsentForm() {
-        self.consentForm?.load(completionHandler: { (error) in
+        form?.load(completionHandler: { (error) in
             if let error = error {
-                logger.error(error)
+                self.loadState = .error
             }  else {
-                logger.verbose("loadConsentFormSuccess")
+                self.loadState = .loaded
+                self.touchScreen.text = "Touch Screen"
             }
         })
     }
@@ -309,7 +311,6 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
             self.presentSparklerScreen()
         case .loaded:
             self.presentConsentForm()
-            logger.verbose("loaded")
         default:
             break
             
@@ -317,15 +318,27 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     }
     
     private func presentConsentForm() {
-        self.consentForm?.present(from: self) { (error, userPrefersAdFree) in
-            if let error = error {
+        form?.present(from: self) { (error, userPrefersAdFree) in
+            
+            if error != nil {
                 logger.error(error)
             } else if userPrefersAdFree {
-                logger.verbose("userPrefersAdFree : \(userPrefersAdFree)")
+                self.presentSparklerScreen()
             } else {
-                // Check the user's consent choice.
-                self.consentStatus = PACConsentInformation.sharedInstance.consentStatus
-            }
-        }    }
 
+            }
+        }
+    }
+
+    
+    private func consentStatusLog() {
+        switch PACConsentInformation.sharedInstance.consentStatus {
+        case .unknown:
+            logger.verbose("unknown")
+        case .nonPersonalized:
+            logger.verbose("nonPersonalized")
+        case .personalized:
+            logger.verbose("personalized")
+        }
+    }
 }

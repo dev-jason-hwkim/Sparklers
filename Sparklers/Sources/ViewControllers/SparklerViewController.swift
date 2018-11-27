@@ -17,7 +17,7 @@ import ReactorKit
 import ReusableKit
 
 import GoogleMobileAds
-
+import PersonalizedAdConsent
 import KYDrawerController
 
 
@@ -406,13 +406,27 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         self.bannerView.delegate = self
         self.interstitial = self.createAndLoadInterstitial()
         let request = GADRequest()
+
+        if PACConsentInformation.sharedInstance.consentStatus == .nonPersonalized {
+            let extras = GADExtras()
+            extras.additionalParameters = ["npa": "1"]
+            request.register(extras)
+        }
+
         self.bannerView.load(request)
     }
     
     private func createAndLoadInterstitial() -> GADInterstitial {
         let interstitial = GADInterstitial(adUnitID: GoogleAdMobInfo.AdUnitId.colorSelectAction.rawValue)
         interstitial.delegate = self
-        interstitial.load(GADRequest())
+        let request = GADRequest()
+        
+        if PACConsentInformation.sharedInstance.consentStatus == .nonPersonalized {
+            let extras = GADExtras()
+            extras.additionalParameters = ["npa": "1"]
+            request.register(extras)
+        }
+        interstitial.load(request)
         return interstitial
     }
     
