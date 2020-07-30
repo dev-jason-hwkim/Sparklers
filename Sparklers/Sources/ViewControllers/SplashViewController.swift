@@ -293,6 +293,7 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     private func loadConsentForm() {
         form?.load(completionHandler: { (error) in
             if let error = error {
+                logger.error(error)
                 self.loadState = .error
             }  else {
                 self.loadState = .loaded
