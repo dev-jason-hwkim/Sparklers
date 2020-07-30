@@ -24,11 +24,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate{
     
     // MARK: UIApplicationDelegate
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
         ) -> Bool {
         
         #if DEBUG
-//        UIView.Start()
+        UIView.Start()
         #endif
         self.dependency = self.dependency ?? CompositionRoot.resolve()
         self.dependency.configureSDKs()

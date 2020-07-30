@@ -41,7 +41,7 @@ final class SparklerViewController: BaseViewController, ReactorKit.View {
         static let colorListHeight: CGFloat = 60.0
         static let colorListItemSize: CGFloat = 44.0
         static let colorListItemSpacing: CGFloat = 10.0
-        static let colorListSectioninset = UIEdgeInsetsMake(0, 10, 0, 10)
+        static let colorListSectioninset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         
         
     }

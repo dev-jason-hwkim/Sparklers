@@ -96,7 +96,7 @@ final class SplashViewReactor: Reactor {
     @objc
     func playerItemDidReachEnd(notification:Notification) {
         if let playerItem: AVPlayerItem = notification.object as? AVPlayerItem {
-            playerItem.seek(to: kCMTimeZero, completionHandler: nil)
+            playerItem.seek(to: CMTime.zero, completionHandler: nil)
         }
     }
     

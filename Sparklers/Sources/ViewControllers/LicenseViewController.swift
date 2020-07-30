@@ -41,7 +41,7 @@ final class LicenseViewController : BaseViewController {
         if let url = Bundle.main.url(forResource: "OpenSource", withExtension: "rtf") {
             
             let attrString = try! NSMutableAttributedString(url: url, options: [:], documentAttributes: nil)
-            attrString.addAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], range: NSRange(location: 0, length: attrString.length))
+            attrString.addAttributes([.foregroundColor: UIColor.white], range: NSRange(location: 0, length: attrString.length))
             $0.attributedText = attrString
         }
         

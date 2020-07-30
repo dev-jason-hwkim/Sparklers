@@ -32,8 +32,8 @@ final class ColorPickerAlertView: UIView, View {
         static let mainColorCollectionItemSpacing: CGFloat = 10.0
         static let mainColorCollectionLineSpacing: CGFloat = 10.0
 
-        static let mainColorCollectionSectioninset = UIEdgeInsetsMake(10, 10, 10, 10)
-        static let colorShadeCollectionSectioninset = UIEdgeInsetsMake(10, 10, 10, 10)
+        static let mainColorCollectionSectioninset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        static let colorShadeCollectionSectioninset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
         static let shadeColorCollectionViewHeight:CGFloat = 64
 

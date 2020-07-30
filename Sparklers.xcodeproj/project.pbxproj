@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,13 +27,13 @@
 		2C6CB87B21A1910E00084F88 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C6CB87D21A1910E00084F88 /* Localizable.strings */; };
 		2C6CB87F21A19BA400084F88 /* TutorialViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CB87E21A19BA400084F88 /* TutorialViewReactor.swift */; };
 		2C6CB88221A1C67B00084F88 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CB88121A1C67B00084F88 /* InfoViewController.swift */; };
-		2C6DB5AE210E9B7200BC7057 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5AD210E9B7200BC7057 /* main.swift */; };
 		2C6DB5B0210E9C7400BC7057 /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5AF210E9C7400BC7057 /* CompositionRoot.swift */; };
 		2C6DB5B4210E9F8900BC7057 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5B3210E9F8900BC7057 /* BaseViewController.swift */; };
 		2C6DB5B7210EA04600BC7057 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DB5B6210EA04600BC7057 /* Logger.swift */; };
 		2C86E77821ABF49D004C5F69 /* UserDefaults-isFirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C86E77721ABF49D004C5F69 /* UserDefaults-isFirstLaunch.swift */; };
 		2C86E78821ABFE2D004C5F69 /* SparklersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C86E78721ABFE2D004C5F69 /* SparklersTests.swift */; };
 		2C86E78A21AC07CC004C5F69 /* UserDefaults-isCheckGADR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C86E78921AC07CC004C5F69 /* UserDefaults-isCheckGADR.swift */; };
+		2CA472EF24D2CAF3005E7BBD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA472EE24D2CAF3005E7BBD /* main.swift */; };
 		2CB1707F214F3594007B65CF /* UIImage-Tint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB1707E214F3594007B65CF /* UIImage-Tint.swift */; };
 		2CB17081214F3623007B65CF /* RainbowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB17080214F3623007B65CF /* RainbowLabel.swift */; };
 		2CB17087214F4324007B65CF /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB17086214F4324007B65CF /* ColorPaletteView.swift */; };
@@ -56,6 +56,7 @@
 		2CF632A821A40A1E006E713D /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF632A721A40A1E006E713D /* BrightnessView.swift */; };
 		2CF632AA21A40A4D006E713D /* HSVColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF632A921A40A4D006E713D /* HSVColorView.swift */; };
 		2CFD7F7921A2D3F30015D95A /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFD7F7821A2D3F30015D95A /* RightViewController.swift */; };
+		BAFB1D54F3ECB059E133CF7A /* Pods_Sparklers_SparklersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2EDF86921F426002EDC85D4 /* Pods_Sparklers_SparklersTests.framework */; };
 		DD163CDA7BC7EF3D49B05006 /* Pods_Sparklers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61C29BB32970DC8BDEDAC06F /* Pods_Sparklers.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		0C4D3572262B384BEDB0EC00 /* Pods-Sparklers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparklers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sparklers/Pods-Sparklers.release.xcconfig"; sourceTree = "<group>"; };
 		1CD6000F7707C6681BA16986 /* Pods-Sparclers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparclers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sparclers/Pods-Sparclers.debug.xcconfig"; sourceTree = "<group>"; };
 		2630A163F1E6B185305AD9B6 /* Pods-SparclersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparclersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SparclersTests/Pods-SparclersTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2630ABA26921E30D45BD0716 /* Pods-Sparklers-SparklersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparklers-SparklersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sparklers-SparklersTests/Pods-Sparklers-SparklersTests.release.xcconfig"; sourceTree = "<group>"; };
 		2C0D8FFB21A6BFAD001F737E /* KYDrawerController-StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KYDrawerController-StatusBar.swift"; sourceTree = "<group>"; };
 		2C23616221A6AE9C00BED795 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		2C23616421A6B3EA00BED795 /* OpenSource.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = OpenSource.rtf; sourceTree = "<group>"; };
@@ -94,7 +96,6 @@
 		2C6CB87C21A1910E00084F88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2C6CB87E21A19BA400084F88 /* TutorialViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewReactor.swift; sourceTree = "<group>"; };
 		2C6CB88121A1C67B00084F88 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		2C6DB5AD210E9B7200BC7057 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2C6DB5AF210E9C7400BC7057 /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 		2C6DB5B3210E9F8900BC7057 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2C6DB5B6210EA04600BC7057 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		2C86E77D21ABFD63004C5F69 /* SparklersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparklersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C86E78721ABFE2D004C5F69 /* SparklersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparklersTests.swift; path = SparklersTests/SparklersTests.swift; sourceTree = SOURCE_ROOT; };
 		2C86E78921AC07CC004C5F69 /* UserDefaults-isCheckGADR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults-isCheckGADR.swift"; sourceTree = "<group>"; };
+		2CA472EE24D2CAF3005E7BBD /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2CB1707E214F3594007B65CF /* UIImage-Tint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage-Tint.swift"; sourceTree = "<group>"; };
 		2CB17080214F3623007B65CF /* RainbowLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowLabel.swift; sourceTree = "<group>"; };
 		2CB17086214F4324007B65CF /* ColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
@@ -131,11 +133,13 @@
 		58B06A8A25677B4E0916F354 /* Pods-Sparclers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparclers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sparclers/Pods-Sparclers.release.xcconfig"; sourceTree = "<group>"; };
 		61C29BB32970DC8BDEDAC06F /* Pods_Sparklers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sparklers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		636E8A2313645FC1B5EED3A1 /* Pods-SparclersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparclersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SparclersTests/Pods-SparclersTests.release.xcconfig"; sourceTree = "<group>"; };
+		701452238A05448F957AB898 /* Pods-Sparklers-SparklersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sparklers-SparklersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sparklers-SparklersTests/Pods-Sparklers-SparklersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F1B41EBE2EB1C2168452233 /* Pods_Sparclers_SparclersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sparclers_SparclersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF57527E32E918B6275D6ACF /* Pods_Sparclers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sparclers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59F8235BEFDD5BC072AD23A /* Pods-SparclersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparclersUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SparclersUITests/Pods-SparclersUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E528A20A21FA4D6308A3103E /* Pods-SparclersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparclersUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SparclersUITests/Pods-SparclersUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDF4CA260C1A04662E735B20 /* Pods_SparclersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SparclersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2EDF86921F426002EDC85D4 /* Pods_Sparklers_SparklersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sparklers_SparklersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAFB1D54F3ECB059E133CF7A /* Pods_Sparklers_SparklersTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,9 +257,9 @@
 		2CDE34AC210E9644001E7064 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2C6DB5AD210E9B7200BC7057 /* main.swift */,
 				2C613444210E9586008AE829 /* AppDelegate.swift */,
 				2C6DB5AF210E9C7400BC7057 /* CompositionRoot.swift */,
+				2CA472EE24D2CAF3005E7BBD /* main.swift */,
 				2CDE34AF210E967C001E7064 /* ViewControllers */,
 				2C6A215A213BD64A006C5450 /* Views */,
 				2C6A214D213BC7DA006C5450 /* Models */,
@@ -349,6 +354,8 @@
 				D59F8235BEFDD5BC072AD23A /* Pods-SparclersUITests.release.xcconfig */,
 				33B2D9FE3E8DD1A6C238346C /* Pods-Sparklers.debug.xcconfig */,
 				0C4D3572262B384BEDB0EC00 /* Pods-Sparklers.release.xcconfig */,
+				701452238A05448F957AB898 /* Pods-Sparklers-SparklersTests.debug.xcconfig */,
+				2630ABA26921E30D45BD0716 /* Pods-Sparklers-SparklersTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -361,6 +368,7 @@
 				EDF4CA260C1A04662E735B20 /* Pods_SparclersUITests.framework */,
 				7F1B41EBE2EB1C2168452233 /* Pods_Sparclers_SparclersTests.framework */,
 				61C29BB32970DC8BDEDAC06F /* Pods_Sparklers.framework */,
+				F2EDF86921F426002EDC85D4 /* Pods_Sparklers_SparklersTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -391,9 +399,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C86E78421ABFD63004C5F69 /* Build configuration list for PBXNativeTarget "SparklersTests" */;
 			buildPhases = (
+				BBF7BBC78EF1460B54B37F69 /* [CP] Check Pods Manifest.lock */,
 				2C86E77921ABFD63004C5F69 /* Sources */,
 				2C86E77A21ABFD63004C5F69 /* Frameworks */,
 				2C86E77B21ABFD63004C5F69 /* Resources */,
+				9E4E95C9030F158BB7C40612 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -486,7 +496,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9E4E95C9030F158BB7C40612 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sparklers-SparklersTests/Pods-Sparklers-SparklersTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sparklers-SparklersTests/Pods-Sparklers-SparklersTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sparklers-SparklersTests/Pods-Sparklers-SparklersTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B90BA9AF3DB6771841C9FDA5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sparklers/Pods-Sparklers-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sparklers/Pods-Sparklers-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sparklers/Pods-Sparklers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBF7BBC78EF1460B54B37F69 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -494,56 +538,18 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Sparklers/Pods-Sparklers-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
-				"${BUILT_PRODUCTS_DIR}/ManualLayout/ManualLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/PersonalizedAdConsent/PersonalizedAdConsent.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
-				"${BUILT_PRODUCTS_DIR}/ReusableKit/ReusableKit.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
-				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
-				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ManualLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PersonalizedAdConsent.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReusableKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"$(DERIVED_FILE_DIR)/Pods-Sparklers-SparklersTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sparklers/Pods-Sparklers-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -561,6 +567,7 @@
 				2CF632A421A409A9006E713D /* ColorWheel.swift in Sources */,
 				2CC0D45A21A396E60078F61E /* ColorPickerCellReactor.swift in Sources */,
 				2C23616321A6AE9C00BED795 /* LicenseViewController.swift in Sources */,
+				2CA472EF24D2CAF3005E7BBD /* main.swift in Sources */,
 				2C0D8FFC21A6BFAD001F737E /* KYDrawerController-StatusBar.swift in Sources */,
 				2CE477AD213CBC2D005FD69C /* SparklerColorCollectionViewSection.swift in Sources */,
 				2C6DB5B7210EA04600BC7057 /* Logger.swift in Sources */,
@@ -581,7 +588,6 @@
 				2CC0D45821A396060078F61E /* ColorPickerCell.swift in Sources */,
 				2C613445210E9586008AE829 /* AppDelegate.swift in Sources */,
 				2CF632A221A4032C006E713D /* Snap.swift in Sources */,
-				2C6DB5AE210E9B7200BC7057 /* main.swift in Sources */,
 				2C6CB87F21A19BA400084F88 /* TutorialViewReactor.swift in Sources */,
 				2CE4779A213CB9FC005FD69C /* BaseCollectionViewCell.swift in Sources */,
 				2C6A214F213BC7F0006C5450 /* Color.swift in Sources */,
@@ -767,7 +773,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tools.pic.travel.sparkler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = WildCard;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -789,13 +795,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tools.pic.travel.sparkler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Sparklers AppStore";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		2C86E78521ABFD63004C5F69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 701452238A05448F957AB898 /* Pods-Sparklers-SparklersTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -821,6 +828,7 @@
 		};
 		2C86E78621ABFD63004C5F69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2630ABA26921E30D45BD0716 /* Pods-Sparklers-SparklersTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;

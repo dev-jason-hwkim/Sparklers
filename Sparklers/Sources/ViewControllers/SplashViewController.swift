@@ -102,11 +102,12 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        
+        
+        
         self.startCoverViewAnimation()
         self.startTouchScreenAnimation()
-        
-        logger.verbose(UserDefaults.isCheckGDPR)
-        
   
         
         self.consentStatusLog()
@@ -123,15 +124,13 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        self.gradientLayer.frame = self.appName.bounds
     }
     
     override func addViews() {
         self.view.addSubview(self.playerView)
         self.view.addSubview(self.coverView)
         self.coverView.addSubview(self.logoImgView)
-//        self.coverView.addSubview(self.squareLineView)
-//        self.coverView.addSubview(self.appName)
+
         self.view.addSubview(self.touchScreen)
     }
     
@@ -172,10 +171,8 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
             make.height.equalTo(Metric.touchScreenHeight)
         }
         
-        self.view.setNeedsLayout()
-        self.view.layoutIfNeeded()
-        
-        
+     
+
     }
     
     
@@ -226,7 +223,7 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
         self.logoImgView.alpha = 0.0
 
         UIView.animate(withDuration: 0.8, delay: 1.0,
-                       options: UIViewAnimationOptions.curveEaseInOut,
+                       options: UIView.AnimationOptions.curveEaseInOut,
                        animations: {
                         self.logoImgView.alpha = 1.0
 
@@ -234,7 +231,6 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     }
     
     private func startTouchScreenAnimation() {
-        
         
         UIView.animate(withDuration: 0.8,
                        delay: 1.5,
@@ -320,7 +316,7 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
     private func presentConsentForm() {
         form?.present(from: self) { (error, userPrefersAdFree) in
             
-            if error != nil {
+            if let error = error {
                 logger.error(error)
             } else if userPrefersAdFree {
                 self.presentSparklerScreen()
@@ -339,6 +335,8 @@ final class SplashViewController: BaseViewController, ReactorKit.View{
             logger.verbose("nonPersonalized")
         case .personalized:
             logger.verbose("personalized")
+        @unknown default:
+            fatalError()
         }
     }
 }

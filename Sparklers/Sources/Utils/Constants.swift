@@ -16,13 +16,13 @@ struct GoogleAdMobInfo {
     
     static let privacyUrl = "https://sparklers.travelpictools.com"
     enum AdUnitId: String {
-//        #if DEBUG
-//        case selectColorPage = "ca-app-pub-3940256099942544/2934735716" // 배너
-//        case colorSelectAction = "ca-app-pub-3940256099942544/4411468910" // 전면
-//        #else
+        #if DEBUG
+        case selectColorPage = "ca-app-pub-3940256099942544/2934735716" // 배너
+        case colorSelectAction = "ca-app-pub-3940256099942544/4411468910" // 전면
+        #else
         case selectColorPage = "ca-app-pub-4718977625494132/6997113180"
         case colorSelectAction = "ca-app-pub-4718977625494132/1691486939"
-//        #endif
+        #endif
     }
 }
 

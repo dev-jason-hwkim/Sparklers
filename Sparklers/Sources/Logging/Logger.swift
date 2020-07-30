@@ -62,7 +62,7 @@ final class Logger {
         setenv("XcodeColors", "YES", 0)
         
         // TTY = Xcode console
-        DDTTYLogger.sharedInstance.do {
+        DDTTYLogger.sharedInstance?.do {
             $0.logFormatter = LogFormatter()
             $0.colorsEnabled = false /*true*/ // Note: doesn't work in Xcode 8
             $0.setForegroundColor(DDMakeColor(30, 121, 214), backgroundColor: nil, for: .info)
